@@ -1,6 +1,9 @@
 # SLCurveChartDemo
 A Easy Way to draw a curve chart for iOS!
 
+## Cocoapod集成
+>pod 'SLCurveChartLib', '~> 1.0.2'
+
 ## 效果展示
 使用该库可以非常灵活的配置曲线颜色，曲线样式，对应X轴和自定义的Y轴配置，动态纵坐标，是否使能缩放X轴，以及对应网格等等。效果如下图所示：
 * 显示左侧Y轴以及Y轴网格

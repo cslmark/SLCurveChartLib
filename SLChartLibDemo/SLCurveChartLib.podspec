@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author             = { "cslmark" => "chensl@hadlinks.com" }
   s.platform     = :ios, "7.0"
-  s.source       = { :git => "https://github.com/cslmark/SLCurveChartDemo.git", :tag => "#{s.version}"}
+  s.source       = { :git => "https://github.com/cslmark/SLCurveChartLib.git", :tag => "#{s.version}"}
   s.source_files  = "SLChartLibDemo/SLCurveChartLib/**/*.{h,m}"
   s.framework  = "Foundation","UIKit"
   s.requires_arc = true

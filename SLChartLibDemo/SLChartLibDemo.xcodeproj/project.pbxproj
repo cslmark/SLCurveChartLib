@@ -1,0 +1,490 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2A70887A1EF11ABB00CAC9FE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7088791EF11ABB00CAC9FE /* main.m */; };
+		2A70887D1EF11ABB00CAC9FE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A70887C1EF11ABB00CAC9FE /* AppDelegate.m */; };
+		2A7088801EF11ABB00CAC9FE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A70887F1EF11ABB00CAC9FE /* ViewController.m */; };
+		2A7088831EF11ABB00CAC9FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A7088811EF11ABB00CAC9FE /* Main.storyboard */; };
+		2A7088851EF11ABB00CAC9FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A7088841EF11ABB00CAC9FE /* Assets.xcassets */; };
+		2A7088881EF11ABB00CAC9FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A7088861EF11ABB00CAC9FE /* LaunchScreen.storyboard */; };
+		2A7088A91EF11D3800CAC9FE /* UIColor+SLExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7088921EF11D3800CAC9FE /* UIColor+SLExtension.m */; };
+		2A7088AA1EF11D3800CAC9FE /* BaseCurveView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7088951EF11D3800CAC9FE /* BaseCurveView.m */; };
+		2A7088AB1EF11D3800CAC9FE /* ChartAxisBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7088981EF11D3800CAC9FE /* ChartAxisBase.m */; };
+		2A7088AC1EF11D3800CAC9FE /* ChartComponentBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A70889A1EF11D3800CAC9FE /* ChartComponentBase.m */; };
+		2A7088AD1EF11D3800CAC9FE /* ChartHighlight.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A70889C1EF11D3800CAC9FE /* ChartHighlight.m */; };
+		2A7088AF1EF11D3800CAC9FE /* ChartDataEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7088A21EF11D3800CAC9FE /* ChartDataEntry.m */; };
+		2A7088B01EF11D3800CAC9FE /* ChartDataEntryBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7088A41EF11D3800CAC9FE /* ChartDataEntryBase.m */; };
+		2A7088B51EF11E4300CAC9FE /* SLChartBaseDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7088B21EF11E4300CAC9FE /* SLChartBaseDataSet.m */; };
+		2A7088B61EF11E4300CAC9FE /* SLLineChartDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7088B41EF11E4300CAC9FE /* SLLineChartDataSet.m */; };
+		2A7088BA1EF11E9400CAC9FE /* SLGCDTimerTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7088B91EF11E9400CAC9FE /* SLGCDTimerTool.m */; };
+		2A7088C21EF1221000CAC9FE /* XAxisFormtter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7088BD1EF1221000CAC9FE /* XAxisFormtter.m */; };
+		2A7088C31EF1221000CAC9FE /* YAxisFormtter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7088BF1EF1221000CAC9FE /* YAxisFormtter.m */; };
+		2A7088C41EF1221000CAC9FE /* YRightAxisFormtter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7088C11EF1221000CAC9FE /* YRightAxisFormtter.m */; };
+		2A7088CA1EF1275400CAC9FE /* statistics_data_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A7088C91EF1275400CAC9FE /* statistics_data_bg.png */; };
+		2AF19D8D1EF261C7005C4BDE /* HighLightFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF19D8C1EF261C7005C4BDE /* HighLightFormatter.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2A7088751EF11ABB00CAC9FE /* SLChartLibDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SLChartLibDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A7088791EF11ABB00CAC9FE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2A70887B1EF11ABB00CAC9FE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2A70887C1EF11ABB00CAC9FE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2A70887E1EF11ABB00CAC9FE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		2A70887F1EF11ABB00CAC9FE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		2A7088821EF11ABB00CAC9FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2A7088841EF11ABB00CAC9FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2A7088871EF11ABB00CAC9FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2A7088891EF11ABB00CAC9FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A7088911EF11D3800CAC9FE /* UIColor+SLExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+SLExtension.h"; sourceTree = "<group>"; };
+		2A7088921EF11D3800CAC9FE /* UIColor+SLExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SLExtension.m"; sourceTree = "<group>"; };
+		2A7088941EF11D3800CAC9FE /* BaseCurveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCurveView.h; sourceTree = "<group>"; };
+		2A7088951EF11D3800CAC9FE /* BaseCurveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCurveView.m; sourceTree = "<group>"; };
+		2A7088971EF11D3800CAC9FE /* ChartAxisBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartAxisBase.h; sourceTree = "<group>"; };
+		2A7088981EF11D3800CAC9FE /* ChartAxisBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartAxisBase.m; sourceTree = "<group>"; };
+		2A7088991EF11D3800CAC9FE /* ChartComponentBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartComponentBase.h; sourceTree = "<group>"; };
+		2A70889A1EF11D3800CAC9FE /* ChartComponentBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartComponentBase.m; sourceTree = "<group>"; };
+		2A70889B1EF11D3800CAC9FE /* ChartHighlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartHighlight.h; sourceTree = "<group>"; };
+		2A70889C1EF11D3800CAC9FE /* ChartHighlight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartHighlight.m; sourceTree = "<group>"; };
+		2A7088A11EF11D3800CAC9FE /* ChartDataEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartDataEntry.h; sourceTree = "<group>"; };
+		2A7088A21EF11D3800CAC9FE /* ChartDataEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartDataEntry.m; sourceTree = "<group>"; };
+		2A7088A31EF11D3800CAC9FE /* ChartDataEntryBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartDataEntryBase.h; sourceTree = "<group>"; };
+		2A7088A41EF11D3800CAC9FE /* ChartDataEntryBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartDataEntryBase.m; sourceTree = "<group>"; };
+		2A7088A61EF11D3800CAC9FE /* SLChartAxisValueFormatterPotocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLChartAxisValueFormatterPotocol.h; sourceTree = "<group>"; };
+		2A7088A71EF11D3800CAC9FE /* SLChartDataProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLChartDataProtocol.h; sourceTree = "<group>"; };
+		2A7088A81EF11D3800CAC9FE /* SLChartFormatterProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLChartFormatterProtocol.h; sourceTree = "<group>"; };
+		2A7088B11EF11E4300CAC9FE /* SLChartBaseDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLChartBaseDataSet.h; sourceTree = "<group>"; };
+		2A7088B21EF11E4300CAC9FE /* SLChartBaseDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLChartBaseDataSet.m; sourceTree = "<group>"; };
+		2A7088B31EF11E4300CAC9FE /* SLLineChartDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLLineChartDataSet.h; sourceTree = "<group>"; };
+		2A7088B41EF11E4300CAC9FE /* SLLineChartDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLLineChartDataSet.m; sourceTree = "<group>"; };
+		2A7088B81EF11E9400CAC9FE /* SLGCDTimerTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLGCDTimerTool.h; sourceTree = "<group>"; };
+		2A7088B91EF11E9400CAC9FE /* SLGCDTimerTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLGCDTimerTool.m; sourceTree = "<group>"; };
+		2A7088BB1EF1207400CAC9FE /* SLCurveChartLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLCurveChartLib.h; sourceTree = "<group>"; };
+		2A7088BC1EF1221000CAC9FE /* XAxisFormtter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XAxisFormtter.h; sourceTree = "<group>"; };
+		2A7088BD1EF1221000CAC9FE /* XAxisFormtter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XAxisFormtter.m; sourceTree = "<group>"; };
+		2A7088BE1EF1221000CAC9FE /* YAxisFormtter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAxisFormtter.h; sourceTree = "<group>"; };
+		2A7088BF1EF1221000CAC9FE /* YAxisFormtter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAxisFormtter.m; sourceTree = "<group>"; };
+		2A7088C01EF1221000CAC9FE /* YRightAxisFormtter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRightAxisFormtter.h; sourceTree = "<group>"; };
+		2A7088C11EF1221000CAC9FE /* YRightAxisFormtter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YRightAxisFormtter.m; sourceTree = "<group>"; };
+		2A7088C91EF1275400CAC9FE /* statistics_data_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statistics_data_bg.png; sourceTree = "<group>"; };
+		2AF19D8B1EF261C7005C4BDE /* HighLightFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighLightFormatter.h; sourceTree = "<group>"; };
+		2AF19D8C1EF261C7005C4BDE /* HighLightFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighLightFormatter.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2A7088721EF11ABB00CAC9FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2A70886C1EF11ABB00CAC9FE = {
+			isa = PBXGroup;
+			children = (
+				2A7088771EF11ABB00CAC9FE /* SLChartLibDemo */,
+				2A7088761EF11ABB00CAC9FE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2A7088761EF11ABB00CAC9FE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2A7088751EF11ABB00CAC9FE /* SLChartLibDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2A7088771EF11ABB00CAC9FE /* SLChartLibDemo */ = {
+			isa = PBXGroup;
+			children = (
+				2A70888F1EF11D3800CAC9FE /* SLCurveChartLib */,
+				2A70887B1EF11ABB00CAC9FE /* AppDelegate.h */,
+				2A70887C1EF11ABB00CAC9FE /* AppDelegate.m */,
+				2A70887E1EF11ABB00CAC9FE /* ViewController.h */,
+				2A70887F1EF11ABB00CAC9FE /* ViewController.m */,
+				2A7088811EF11ABB00CAC9FE /* Main.storyboard */,
+				2A7088841EF11ABB00CAC9FE /* Assets.xcassets */,
+				2A7088861EF11ABB00CAC9FE /* LaunchScreen.storyboard */,
+				2A7088891EF11ABB00CAC9FE /* Info.plist */,
+				2A7088781EF11ABB00CAC9FE /* Supporting Files */,
+			);
+			path = SLChartLibDemo;
+			sourceTree = "<group>";
+		};
+		2A7088781EF11ABB00CAC9FE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2A7088BC1EF1221000CAC9FE /* XAxisFormtter.h */,
+				2A7088BD1EF1221000CAC9FE /* XAxisFormtter.m */,
+				2A7088BE1EF1221000CAC9FE /* YAxisFormtter.h */,
+				2A7088BF1EF1221000CAC9FE /* YAxisFormtter.m */,
+				2A7088C01EF1221000CAC9FE /* YRightAxisFormtter.h */,
+				2A7088C11EF1221000CAC9FE /* YRightAxisFormtter.m */,
+				2A7088791EF11ABB00CAC9FE /* main.m */,
+				2AF19D8B1EF261C7005C4BDE /* HighLightFormatter.h */,
+				2AF19D8C1EF261C7005C4BDE /* HighLightFormatter.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2A70888F1EF11D3800CAC9FE /* SLCurveChartLib */ = {
+			isa = PBXGroup;
+			children = (
+				2A7088BB1EF1207400CAC9FE /* SLCurveChartLib.h */,
+				2A7088B71EF11E9400CAC9FE /* UtilTool */,
+				2A7088901EF11D3800CAC9FE /* Category */,
+				2A7088931EF11D3800CAC9FE /* ChartView */,
+				2A7088961EF11D3800CAC9FE /* Components */,
+				2A70889D1EF11D3800CAC9FE /* Data */,
+				2A7088A51EF11D3800CAC9FE /* Interface */,
+				2A7088C81EF1275400CAC9FE /* Resource */,
+			);
+			path = SLCurveChartLib;
+			sourceTree = "<group>";
+		};
+		2A7088901EF11D3800CAC9FE /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				2A7088911EF11D3800CAC9FE /* UIColor+SLExtension.h */,
+				2A7088921EF11D3800CAC9FE /* UIColor+SLExtension.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		2A7088931EF11D3800CAC9FE /* ChartView */ = {
+			isa = PBXGroup;
+			children = (
+				2A7088941EF11D3800CAC9FE /* BaseCurveView.h */,
+				2A7088951EF11D3800CAC9FE /* BaseCurveView.m */,
+			);
+			path = ChartView;
+			sourceTree = "<group>";
+		};
+		2A7088961EF11D3800CAC9FE /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2A7088971EF11D3800CAC9FE /* ChartAxisBase.h */,
+				2A7088981EF11D3800CAC9FE /* ChartAxisBase.m */,
+				2A7088991EF11D3800CAC9FE /* ChartComponentBase.h */,
+				2A70889A1EF11D3800CAC9FE /* ChartComponentBase.m */,
+				2A70889B1EF11D3800CAC9FE /* ChartHighlight.h */,
+				2A70889C1EF11D3800CAC9FE /* ChartHighlight.m */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		2A70889D1EF11D3800CAC9FE /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				2A7088B11EF11E4300CAC9FE /* SLChartBaseDataSet.h */,
+				2A7088B21EF11E4300CAC9FE /* SLChartBaseDataSet.m */,
+				2A7088B31EF11E4300CAC9FE /* SLLineChartDataSet.h */,
+				2A7088B41EF11E4300CAC9FE /* SLLineChartDataSet.m */,
+				2A7088A01EF11D3800CAC9FE /* Standard */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		2A7088A01EF11D3800CAC9FE /* Standard */ = {
+			isa = PBXGroup;
+			children = (
+				2A7088A11EF11D3800CAC9FE /* ChartDataEntry.h */,
+				2A7088A21EF11D3800CAC9FE /* ChartDataEntry.m */,
+				2A7088A31EF11D3800CAC9FE /* ChartDataEntryBase.h */,
+				2A7088A41EF11D3800CAC9FE /* ChartDataEntryBase.m */,
+			);
+			path = Standard;
+			sourceTree = "<group>";
+		};
+		2A7088A51EF11D3800CAC9FE /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				2A7088A61EF11D3800CAC9FE /* SLChartAxisValueFormatterPotocol.h */,
+				2A7088A71EF11D3800CAC9FE /* SLChartDataProtocol.h */,
+				2A7088A81EF11D3800CAC9FE /* SLChartFormatterProtocol.h */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		2A7088B71EF11E9400CAC9FE /* UtilTool */ = {
+			isa = PBXGroup;
+			children = (
+				2A7088B81EF11E9400CAC9FE /* SLGCDTimerTool.h */,
+				2A7088B91EF11E9400CAC9FE /* SLGCDTimerTool.m */,
+			);
+			path = UtilTool;
+			sourceTree = "<group>";
+		};
+		2A7088C81EF1275400CAC9FE /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				2A7088C91EF1275400CAC9FE /* statistics_data_bg.png */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2A7088741EF11ABB00CAC9FE /* SLChartLibDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A70888C1EF11ABB00CAC9FE /* Build configuration list for PBXNativeTarget "SLChartLibDemo" */;
+			buildPhases = (
+				2A7088711EF11ABB00CAC9FE /* Sources */,
+				2A7088721EF11ABB00CAC9FE /* Frameworks */,
+				2A7088731EF11ABB00CAC9FE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SLChartLibDemo;
+			productName = SLChartLibDemo;
+			productReference = 2A7088751EF11ABB00CAC9FE /* SLChartLibDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2A70886D1EF11ABB00CAC9FE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Hadlinks;
+				TargetAttributes = {
+					2A7088741EF11ABB00CAC9FE = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 8UTC3S4RZK;
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = 2A7088701EF11ABB00CAC9FE /* Build configuration list for PBXProject "SLChartLibDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2A70886C1EF11ABB00CAC9FE;
+			productRefGroup = 2A7088761EF11ABB00CAC9FE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2A7088741EF11ABB00CAC9FE /* SLChartLibDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2A7088731EF11ABB00CAC9FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A7088881EF11ABB00CAC9FE /* LaunchScreen.storyboard in Resources */,
+				2A7088CA1EF1275400CAC9FE /* statistics_data_bg.png in Resources */,
+				2A7088851EF11ABB00CAC9FE /* Assets.xcassets in Resources */,
+				2A7088831EF11ABB00CAC9FE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2A7088711EF11ABB00CAC9FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A7088AA1EF11D3800CAC9FE /* BaseCurveView.m in Sources */,
+				2A7088A91EF11D3800CAC9FE /* UIColor+SLExtension.m in Sources */,
+				2AF19D8D1EF261C7005C4BDE /* HighLightFormatter.m in Sources */,
+				2A7088AF1EF11D3800CAC9FE /* ChartDataEntry.m in Sources */,
+				2A7088801EF11ABB00CAC9FE /* ViewController.m in Sources */,
+				2A7088B01EF11D3800CAC9FE /* ChartDataEntryBase.m in Sources */,
+				2A7088C31EF1221000CAC9FE /* YAxisFormtter.m in Sources */,
+				2A70887D1EF11ABB00CAC9FE /* AppDelegate.m in Sources */,
+				2A7088C21EF1221000CAC9FE /* XAxisFormtter.m in Sources */,
+				2A7088AB1EF11D3800CAC9FE /* ChartAxisBase.m in Sources */,
+				2A7088B51EF11E4300CAC9FE /* SLChartBaseDataSet.m in Sources */,
+				2A7088AD1EF11D3800CAC9FE /* ChartHighlight.m in Sources */,
+				2A7088AC1EF11D3800CAC9FE /* ChartComponentBase.m in Sources */,
+				2A7088B61EF11E4300CAC9FE /* SLLineChartDataSet.m in Sources */,
+				2A7088BA1EF11E9400CAC9FE /* SLGCDTimerTool.m in Sources */,
+				2A7088C41EF1221000CAC9FE /* YRightAxisFormtter.m in Sources */,
+				2A70887A1EF11ABB00CAC9FE /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2A7088811EF11ABB00CAC9FE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2A7088821EF11ABB00CAC9FE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2A7088861EF11ABB00CAC9FE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2A7088871EF11ABB00CAC9FE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2A70888A1EF11ABB00CAC9FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2A70888B1EF11ABB00CAC9FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2A70888D1EF11ABB00CAC9FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8UTC3S4RZK;
+				INFOPLIST_FILE = SLChartLibDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hadlinks.SLDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "65ea2f6c-abf5-4fbb-a094-b24c4d10af80";
+				PROVISIONING_PROFILE_SPECIFIER = SLDemo_Dev;
+			};
+			name = Debug;
+		};
+		2A70888E1EF11ABB00CAC9FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = SLChartLibDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hadlinks.SLDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2A7088701EF11ABB00CAC9FE /* Build configuration list for PBXProject "SLChartLibDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A70888A1EF11ABB00CAC9FE /* Debug */,
+				2A70888B1EF11ABB00CAC9FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A70888C1EF11ABB00CAC9FE /* Build configuration list for PBXNativeTarget "SLChartLibDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A70888D1EF11ABB00CAC9FE /* Debug */,
+				2A70888E1EF11ABB00CAC9FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2A70886D1EF11ABB00CAC9FE /* Project object */;
+}

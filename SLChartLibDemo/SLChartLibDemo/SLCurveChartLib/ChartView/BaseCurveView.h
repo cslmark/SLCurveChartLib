@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SLLineChartDataSet.h"
+#import "SLLineChartData.h"
 #import "ChartAxisBase.h"
 #import "ChartHighlight.h"
 
@@ -21,7 +22,7 @@
     NSNumber* _visibleXRangeMinimum;
     NSNumber* _visibleXRangeMaximum;
 }
-@property (nonatomic, strong) SLLineChartDataSet* datasource;
+@property (nonatomic, strong) SLLineChartData* datasource;
 //常用的配置，是否开启缩放和动态纵坐标<默认是开启的>
 //是否从0开始作为绘制点，默认是 NO
 //传入 @YES  @NO   @num
@@ -43,11 +44,11 @@
  根据数据源，将曲线部分的数据源完全重新更新，当程序更改曲线密度的时候，需要更改该方法
  @param datasource 数据源<内部的set方法实现等效于该方法>
  */
--(void) refreashDataSourceRestoreContext:(SLLineChartDataSet*) datasource;
+-(void) refreashDataSourceRestoreContext:(SLLineChartData*) datasource;
 /**
  仅仅是更新数据源，保存当前曲线的基本设定和现场
  @param datasource 数据源
  */
--(void) refreashDataSource:(SLLineChartDataSet*) datasource;
+-(void) refreashDataSource:(SLLineChartData*) datasource;
 -(void) refreashGraph;
 @end

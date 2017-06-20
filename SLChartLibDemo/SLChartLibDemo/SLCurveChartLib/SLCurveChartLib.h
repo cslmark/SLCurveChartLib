@@ -13,6 +13,7 @@
 #import "BaseCurveView.h"
 //曲线的数据源
 #import "SLLineChartDataSet.h"
+#import "SLLineChartData.h"
 //曲线的数据点
 #import "ChartDataEntry.h"
 //工具和分类

@@ -15,7 +15,7 @@
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet BaseCurveView *myView;
-@property (nonatomic, strong) SLLineChartDataSet* dataset;
+@property (nonatomic, strong) SLLineChartData* dataSource;
 @property (nonatomic, strong) NSMutableArray* tempArray0;
 @property (nonatomic, strong) NSMutableArray* tempArray1;
 @property (nonatomic, strong) SLGCDTimer timer;
@@ -76,16 +76,35 @@
     highLight.delegate = self.highLightFor;
     self.myView.hightLight = highLight;
     
-    _dataset = [[SLLineChartDataSet alloc] initWithValues:self.tempArray1 label:@"Default"];
-    _dataset.lineWidth = 1.0;
-    _dataset.mode = curveLineMode;
-    _dataset.color = [UIColor greenColor];
-    _dataset.circleRadius = 5.0;
-    _dataset.circleHoleRadius = 3.0;
-    _dataset.highlightColor = [UIColor colorWithRed:244/255.f green:117/255.f blue:117/255.f alpha:1.f];
-    _dataset.drawCircleHoleEnabled = YES;
-    _dataset.drawCirclesEnabled = YES;
-    _dataset.drawCirclesEnabled = YES;
+    
+    SLLineChartDataSet* dataSet = [[SLLineChartDataSet alloc] initWithValues:self.tempArray1 label:@"Default"];
+    dataSet.lineWidth = 1.0;
+    dataSet.mode = curveLineMode;
+    dataSet.color = [UIColor greenColor];
+    dataSet.circleRadius = 5.0;
+    dataSet.circleHoleRadius = 3.0;
+    dataSet.highlightColor = [UIColor colorWithRed:244/255.f green:117/255.f blue:117/255.f alpha:1.f];
+    dataSet.drawCircleHoleEnabled = YES;
+    dataSet.drawCirclesEnabled = YES;
+    dataSet.drawCirclesEnabled = YES;
+    
+    SLLineChartDataSet* dataSet2 = [[SLLineChartDataSet alloc] initWithValues:self.tempArray0 label:@"Default"];
+    dataSet2.lineWidth = 1.0;
+    dataSet2.mode = curveLineMode;
+    dataSet2.color = [UIColor redColor];
+    dataSet2.circleRadius = 5.0;
+    dataSet2.circleHoleRadius = 3.0;
+    dataSet2.highlightColor = [UIColor colorWithRed:244/255.f green:117/255.f blue:117/255.f alpha:1.f];
+    dataSet2.drawCircleHoleEnabled = YES;
+    dataSet2.drawCirclesEnabled = YES;
+    dataSet2.drawCirclesEnabled = YES;
+    
+    NSMutableArray* tempArray = [NSMutableArray arrayWithCapacity:1];
+    [tempArray addObject:dataSet];
+    [tempArray addObject:dataSet2];
+    SLLineChartData* dataSource = [[SLLineChartData alloc] initWithValues:tempArray];
+    self.dataSource = dataSource;
+    
     [self.myView setScaleXEnabled:@(YES)];
     [self.myView setDynamicYAixs:@(NO)];
     [self.myView setBaseYValueFromZero:@(YES)];
@@ -94,8 +113,9 @@
     [self.myView setVisibleXRangeMaximum:@(50)];
     [self.myView setVisibleXRangeMinimum:@(2)];
     [self.myView setVisibleXRangeDefaultmum:@(10)];
+    
     //直接调用Set方法和refreashDataSourceRestoreContext 和该方法等效
-    [self.myView refreashDataSourceRestoreContext:_dataset];
+    [self.myView refreashDataSourceRestoreContext:_dataSource];
 }
 
 -(NSMutableArray*) tempArray0{
@@ -151,10 +171,10 @@
     sender.selected = !sender.selected;
     if (sender.selected) {
         self.myView.leftYAxis.enabled = NO;
-        [self.myView refreashDataSourceRestoreContext:self.dataset];
+        [self.myView refreashDataSourceRestoreContext:self.dataSource];
     }else{
         self.myView.leftYAxis.enabled = YES;
-        [self.myView refreashDataSourceRestoreContext:self.dataset];
+        [self.myView refreashDataSourceRestoreContext:self.dataSource];
     }
 }
 
@@ -162,10 +182,10 @@
     sender.selected = !sender.selected;
     if (sender.selected) {
         self.myView.rightYAxis.enabled = NO;
-        [self.myView refreashDataSourceRestoreContext:self.dataset];
+        [self.myView refreashDataSourceRestoreContext:self.dataSource];
     }else{
         self.myView.rightYAxis.enabled = YES;
-        [self.myView refreashDataSourceRestoreContext:self.dataset];
+        [self.myView refreashDataSourceRestoreContext:self.dataSource];
     }
 }
 
@@ -173,19 +193,21 @@
     sender.selected = !sender.selected;
     if (sender.selected) {
         self.myView.XAxis.enabled = NO;
-        [self.myView refreashDataSourceRestoreContext:self.dataset];
+        [self.myView refreashDataSourceRestoreContext:self.dataSource];
     }else{
         self.myView.XAxis.enabled = YES;
-        [self.myView refreashDataSourceRestoreContext:self.dataset];
+        [self.myView refreashDataSourceRestoreContext:self.dataSource];
     }
 }
 
 - (IBAction) curveOrStrightClick:(UIButton *)sender{
     sender.selected = !sender.selected;
-    if (sender.selected) {
-        _dataset.mode = brokenLineMode;
-    }else{
-        _dataset.mode = curveLineMode;
+    for (SLLineChartDataSet* dataSet in self.dataSource.dataSets) {
+        if (sender.selected) {
+            dataSet.mode = brokenLineMode;
+        }else{
+            dataSet.mode = curveLineMode;
+        }
     }
     [self.myView refreashGraph];
 }

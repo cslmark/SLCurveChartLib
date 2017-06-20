@@ -210,7 +210,7 @@
 }
 
 #pragma mark - 当数据源发生了改变的时候，采用该方法进行调用
--(void) refreashDataSourceRestoreContext:(SLLineChartDataSet*) datasource{
+-(void) refreashDataSourceRestoreContext:(SLLineChartData*) datasource{
     _datasource = datasource;
     self.backgroundColor = [datasource graphColor];
     //完全重新更新
@@ -218,12 +218,12 @@
     [self refreashGraph];
 }
 
--(void) refreashDataSource:(SLLineChartDataSet*) datasource{
+-(void) refreashDataSource:(SLLineChartData*) datasource{
     _datasource = datasource;
     [self refreashGraph];
 }
 
--(void) setDatasource:(SLLineChartDataSet *)datasource{
+-(void) setDatasource:(SLLineChartData *)datasource{
     _datasource = datasource;
     self.backgroundColor = [datasource graphColor];
     [self setup];
@@ -311,95 +311,10 @@
         CGRect clipRect = CGRectMake(leftYAxisW, 0, graphW, myH);
         CGContextClipToRect(ctx, clipRect);
         [self drawXaxis:self.XAxis context:ctx];
-        [[_datasource color] set];
-        CGContextSetLineWidth(ctx, 1.0f);
-        CGFloat lastX = 0, lastY = 0;
-        for (NSInteger index = drawFromIndex; index < (drawToIndex+1); index++) {
-            ChartDataEntry* data = [self.datasource entryForIndex:(int)index];
-            CGFloat pointX = leftYAxisW + drawFromX + (index-drawFromIndex) * xstep;
-            CGFloat pointY = myH - ((data.y - minY) * ypixunit) - ybottom;
-            if (index == drawFromIndex) {
-                CGContextMoveToPoint(ctx, pointX, pointY);
-            }else{
-                //绘制直线的方法
-                if (_datasource.mode == brokenLineMode) {
-                    CGContextAddLineToPoint(ctx, pointX, pointY);
-                }else{
-                    //绘制曲线的方法
-                    CGContextMoveToPoint(ctx, lastX, lastY);
-                    CGFloat X2 = (lastX+pointX)/2.0;
-                    CGFloat Y2 = lastY;
-                    
-                    CGFloat X3 = (lastX+pointX)/2.0;
-                    CGFloat Y3 = pointY;
-                    CGContextAddCurveToPoint(ctx, X2, Y2, X3, Y3, pointX, pointY);
-                    CGContextStrokePath(ctx);
-                }
-            }
-            lastX = pointX;
-            lastY = pointY;
-        }
-        CGContextStrokePath(ctx);
         
-        //开始绘制标杆
-//        [[UIColor redColor] set];
-//        CGContextSaveGState(ctx);
-//        CGFloat pattern[2] = {3,3};
-//        CGContextSetLineWidth(ctx, 1);
-//        CGContextSetLineDash(ctx, 3, pattern, 2);
-//        CGFloat modelX = KScreen_W * 0.8;
-//        CGFloat modelY_Star = ytop;
-//        CGFloat modelY_end = myH - ybottom;
-//        CGContextMoveToPoint(ctx, modelX, modelY_Star);
-//        CGContextAddLineToPoint(ctx, modelX, modelY_end);
-//        CGContextStrokePath(ctx);
-//        CGContextRestoreGState(ctx);
-//        
-//        //关于标杆的说明<必须解决不能整除问题，计算误差>
-//        double currntModelResult = ((fromX+modelX-leftYAxisW)-xleft)/xstep;
-//        int currntModelIndex = (int)(currntModelResult + 0.01);
-//        //        NSLog(@"fromX+modelX)-xleft = %lf   xstep = %lf  currntModelIndex = %d",fromX+modelX-xleft,  xstep, currntModelIndex);
-//        NSDictionary *attrs = [self getAttributesWithfont:[UIFont systemFontOfSize:11] Color:[UIColor blueColor]];
-//        ChartDataEntry* data = [self.datasource entryForIndex:(int)currntModelIndex];
-//        CGFloat modelY = myH - ((data.y - minY) * ypixunit) - ybottom;
-//        NSString *Ystring = [NSString stringWithFormat:@"%0.0lf",data.y];
-//        NSString *string = [NSString stringWithFormat:@"%0.0lf",data.x];
-//        CGSize size = [string sizeWithAttributes:attrs];
-//        CGSize ysize = [string sizeWithAttributes:attrs];
-//        CGPoint localpoint = CGPointMake(modelX - size.width/2, myH - (ybottom - xlabelbottom - 10));
-//        CGPoint localpointY = CGPointMake(modelX - size.width/2, modelY- ysize.height/2 - 10);
-//        [string drawAtPoint:localpoint withAttributes:attrs];
-//        [Ystring drawAtPoint:localpointY withAttributes:attrs];
-        
-        //开始增加打点函数
-        if (_datasource.drawCirclesEnabled) {
-            if ([_datasource drawCircleHoleEnabled] == NO) {
-                [[_datasource circleColor] set];
-                for (NSInteger index = drawFromIndex; index < (drawToIndex+1); index++) {
-                    ChartDataEntry* data = [self.datasource entryForIndex:(int)index];
-                    CGFloat pointX = leftYAxisW + drawFromX + (index-drawFromIndex) * xstep;
-                    CGFloat pointY = myH - ((data.y - minY) * ypixunit)- ybottom;
-                    drawArc(pointX, pointY, _datasource.circleRadius);
-                }
-            }else{
-                for (NSInteger index = drawFromIndex; index < (drawToIndex+1); index++) {
-                    ChartDataEntry* data = [self.datasource entryForIndex:(int)index];
-                    CGFloat pointX = leftYAxisW + drawFromX + (index-drawFromIndex) * xstep;
-                    CGFloat pointY = myH - ((data.y - minY) * ypixunit)- ybottom;
-                    CGPoint center = CGPointMake(pointX, pointY);
-                    [[_datasource circleColor] set];
-                    drawCircleRing(ctx, center, _datasource.circleRadius, _datasource.circleHoleRadius);
-                    BOOL clearColor = CGColorEqualToColor([_datasource circleHoleColor].CGColor, [UIColor clearColor].CGColor);
-                    if (clearColor) {
-                        [[_datasource graphColor] set];
-                    }else{
-                        [[_datasource circleHoleColor] set];
-                    }
-                    drawArc(pointX, pointY, _datasource.circleHoleRadius);
-                }
-            }
+        for (id<SLChartDataProtocol> dataSet in self.datasource.dataSets) {
+            [self drawCurveWith:dataSet context:ctx yPixunit:ypixunit];
         }
-        CGContextRestoreGState(ctx);
         
         //开始绘制HightLight<根据当前的坐标开始绘制>
         [self drawHightLight:self.hightLight context:ctx];
@@ -423,7 +338,8 @@
             for (NSInteger index = drawFromIndex; index < (drawToIndex+1); index++) {
                 [axis.labelTextColor set];
                 if (index % aXisJump == 0) {
-                    ChartDataEntry* data = [self.datasource entryForIndex:(int)index];
+                    id<SLChartDataProtocol> dataSet = [self.datasource firstReference];
+                    ChartDataEntry* data = [dataSet entryForIndex:(int)index];
                     NSString *string = [axis.axisValueFormatter stringForValue:data.x axis:axis];
                     CGSize size = [string sizeWithAttributes:attrs];
                     CGFloat pointX = leftYAxisW + drawFromX + (index-drawFromIndex) * xstep;
@@ -529,7 +445,8 @@
                 if (axis.axisType == YLeftAxisType){
                    CGContextSetLineDash(ctx, fromX, pattern, 4);
                 }else{
-                   CGFloat totalW = [self.datasource entryCount]*xstep +  xleft + xright;
+                   id<SLChartDataProtocol> dataSet = [self.datasource firstReference];
+                   CGFloat totalW = [dataSet entryCount]*xstep +  xleft + xright;
                    CGFloat phase = totalW-graphW-fromX;
                    CGContextSetLineDash(ctx, phase, pattern, 4);
                 }
@@ -565,7 +482,8 @@
     if (hightLight.enabled) {
         if ((hightLight.dataIndex >= drawFromIndex) && (hightLight.dataIndex <= drawToIndex)) {
             CGFloat ypixunit = (myH - ybottom - ytop)/(maxY - minY);
-            ChartDataEntry* data = [self.datasource entryForIndex:(int)hightLight.dataIndex];
+            int dataSetIndex = [self.datasource dataSetIndexForHigLight:self.hightLight];
+            ChartDataEntry* data = [self.datasource entryPointForHighLight:self.hightLight];
             CGFloat pointX = leftYAxisW + drawFromX + (hightLight.dataIndex-drawFromIndex) * xstep;
             CGFloat pointY = myH - ((data.y - minY) * ypixunit)- ybottom;
             self.hightLight.drawX = pointX;
@@ -573,6 +491,7 @@
             self.hightLight.yPx = pointY;
             self.hightLight.x = data.x;
             self.hightLight.y = data.y;
+            self.hightLight.dataSetIndex = dataSetIndex;
             CGRect bounds = CGRectMake(0, 0, myW, myH);
             UIEdgeInsets insets = UIEdgeInsetsMake(ytop, leftYAxisW, ybottom, rightYAxisW);
             if ([self.hightLight.delegate respondsToSelector:@selector(chartHighlight:context:bounds:edageInsets:)]) {
@@ -581,7 +500,8 @@
                 CGFloat remainH = 29.5;
                 CGFloat remainW = 50;
                 CGFloat remainX = (pointX - remainW/2);
-                CGFloat remainY = pointY-21-[_datasource circleRadius]- 2- 6;
+                SLLineChartDataSet* dataSet = [self.datasource firstReference];
+                CGFloat remainY = pointY-21-[dataSet circleRadius]- 2- 6;
                 CGFloat tempMaxY = (myH - ybottom);
                 if(remainY > tempMaxY){
                     remainY = tempMaxY;
@@ -604,6 +524,72 @@
     }
     CGContextRestoreGState(ctx);
 }
+
+-(void) drawCurveWith:(SLLineChartDataSet*) dataSet
+              context:(CGContextRef) ctx
+             yPixunit:(CGFloat) ypixunit{
+    CGContextSaveGState(ctx);
+    [[dataSet color] set];
+    CGContextSetLineWidth(ctx, 1.0f);
+    CGFloat lastX = 0, lastY = 0;
+    for (NSInteger index = drawFromIndex; index < (drawToIndex+1); index++) {
+        ChartDataEntry* data = [dataSet entryForIndex:(int)index];
+        CGFloat pointX = leftYAxisW + drawFromX + (index-drawFromIndex) * xstep;
+        CGFloat pointY = myH - ((data.y - minY) * ypixunit) - ybottom;
+        if (index == drawFromIndex) {
+            CGContextMoveToPoint(ctx, pointX, pointY);
+        }else{
+            //绘制直线的方法
+            if (dataSet.mode == brokenLineMode) {
+                CGContextAddLineToPoint(ctx, pointX, pointY);
+            }else{
+                //绘制曲线的方法
+                CGContextMoveToPoint(ctx, lastX, lastY);
+                CGFloat X2 = (lastX+pointX)/2.0;
+                CGFloat Y2 = lastY;
+                
+                CGFloat X3 = (lastX+pointX)/2.0;
+                CGFloat Y3 = pointY;
+                CGContextAddCurveToPoint(ctx, X2, Y2, X3, Y3, pointX, pointY);
+                CGContextStrokePath(ctx);
+            }
+        }
+        lastX = pointX;
+        lastY = pointY;
+    }
+    CGContextStrokePath(ctx);
+    
+    //开始增加打点函数
+    if (dataSet.drawCirclesEnabled) {
+        if ([dataSet drawCircleHoleEnabled] == NO) {
+            [[dataSet circleColor] set];
+            for (NSInteger index = drawFromIndex; index < (drawToIndex+1); index++) {
+                ChartDataEntry* data = [dataSet entryForIndex:(int)index];
+                CGFloat pointX = leftYAxisW + drawFromX + (index-drawFromIndex) * xstep;
+                CGFloat pointY = myH - ((data.y - minY) * ypixunit)- ybottom;
+                drawArc(pointX, pointY, dataSet.circleRadius);
+            }
+        }else{
+            for (NSInteger index = drawFromIndex; index < (drawToIndex+1); index++) {
+                ChartDataEntry* data = [dataSet entryForIndex:(int)index];
+                CGFloat pointX = leftYAxisW + drawFromX + (index-drawFromIndex) * xstep;
+                CGFloat pointY = myH - ((data.y - minY) * ypixunit)- ybottom;
+                CGPoint center = CGPointMake(pointX, pointY);
+                [[dataSet circleColor] set];
+                drawCircleRing(ctx, center, dataSet.circleRadius, dataSet.circleHoleRadius);
+                BOOL clearColor = CGColorEqualToColor([dataSet circleHoleColor].CGColor, [UIColor clearColor].CGColor);
+                if (clearColor) {
+                    [[dataSet graphColor] set];
+                }else{
+                    [[dataSet circleHoleColor] set];
+                }
+                drawArc(pointX, pointY, dataSet.circleHoleRadius);
+            }
+        }
+    }
+    CGContextRestoreGState(ctx);
+}
+
 
 
 #pragma mark - 计算部分获取最大的数值
@@ -631,24 +617,30 @@
     drawToX = drawFromX + (drawToIndex-drawFromIndex)*xstep;
     centerIndex = (drawFromIndex + drawToIndex)/2;
     
-    
-    ChartDataEntry* data = [self.datasource entryForIndex:drawFromIndex];
     if ([self.dynamicYAixs boolValue]) {
-        maxY = data.y;
-        minY = data.y;
-        for (int index = drawFromIndex+1; index <= drawToIndex; index++) {
-            ChartDataEntry* data = [self.datasource entryForIndex:(int)index];
-            if (data.y > maxY) {
-                maxY = data.y;
-            }
-            if (data.y < minY) {
-                minY = data.y;
+        if ([_datasource entryCount]) {
+            id<SLChartDataProtocol> dataSet = [self.datasource firstReference];
+            ChartDataEntry* data = [dataSet entryForIndex:drawFromIndex];
+            maxY = data.y;
+            minY = data.y;
+            for (id<SLChartDataProtocol> dataSet in self.datasource.dataSets) {
+                for (int index = drawFromIndex+1; index <= drawToIndex; index++) {
+                    ChartDataEntry* data = [dataSet entryForIndex:(int)index];
+                    if (data.y > maxY) {
+                        maxY = data.y;
+                    }
+                    if (data.y < minY) {
+                        minY = data.y;
+                    }
+                }
             }
         }
-    }else{
-        maxY = [_datasource yMax];
-        minY = [_datasource yMin];
+        else{
+            maxY = [_datasource yMax];
+            minY = [_datasource yMin];
+        }
     }
+    
     
     if ([self.baseYValueFromZero isEqualToNumber:@(YES)]) {
         if (minY > 0) {
@@ -767,6 +759,9 @@
         CGFloat x = startPos.x;
         if ((x > leftYAxisW) && ( x < myW - rightYAxisW)) {
             self.hightLight.xPx = (startPos.x - leftYAxisW) + fromX;
+            self.hightLight.yPx = (myH - startPos.y) - ybottom;
+            CGFloat ypixunit = graphH/(maxY - minY);
+            self.hightLight.touchYValue = self.hightLight.yPx/ypixunit + minY;
             int localx = self.hightLight.xPx - xleft;
             int index = ((localx+0.5*xstep)/ xstep);
             if (index < [_datasource entryCount]) {
@@ -818,259 +813,27 @@ void drawCircleRing(CGContextRef ctx, CGPoint center, CGFloat outRadius, CGFloat
 
 
 
-- (void)drawXLabelS{
-    //隐藏X轴的坐标，滑动结束在显示对应的坐标
-    int xjump = 1;
-    //如果很密
-    if (xstep < xlabelminstep) {
-        xjump = (int)(xlabelminstep / xstep) + 1;
-    }
-    NSDictionary *attrs = [self getAttributesWithfont:[UIFont systemFontOfSize:11] Color:[UIColor whiteColor]];
-    for (NSInteger index = drawFromIndex; index < (drawToIndex+1); index++) {
-        if ((index % xjump) == 0) {
-            ChartDataEntry* data = [self.datasource entryForIndex:(int)index];
-            NSString *string = [NSString stringWithFormat:@"%lf",data.x];
-            CGSize size = [string sizeWithAttributes:attrs];
-            CGFloat pointX = drawFromX + (index-drawFromIndex) * xstep;
-            CGPoint localpoint = CGPointMake(pointX - size.width/2, myH - (ybottom - xlabelbottom));
-            [string drawAtPoint:localpoint withAttributes:attrs];
-        }
-    }
-}
-
-//#pragma mark - 曲线部分绘制部分代码
-//-(void) drawLayer:(CALayer *)layer inContext:(CGContextRef)ctx{
-//    if (layer == self.layer) {
-//        NSLog(@"self.Rect = %@", NSStringFromCGRect(layer.bounds));
-//        //保存宽高
-//        myW = layer.bounds.size.width;
-//        myH = layer.bounds.size.height;
-//        
-//        //曲线区域部部分的高度和宽度
-//        graphW = myW - rightYAxisW - leftYAxisW;
-//        graphH = myH - ytop - ybottom;
-//        
-//        //设定需要展示区域
-//        toX = fromX + graphW;
-//        
-//        //开始计算
-//        [self calcDraw];
-//        
-//        //新建绘制曲线的图层
-////        if (self.graphLayer == nil) {
-////            CALayer* graphLayer = [[CALayer alloc] init];
-////            [self.layer addSublayer:graphLayer];
-////            graphLayer.delegate = self;
-////            self.graphLayer = graphLayer;
-////            self.graphLayer.backgroundColor = [UIColor blueColor].CGColor;
-////        }
-////        self.graphLayer.frame = CGRectMake(leftYAxisW, ytop, graphW, graphH);
-////        [self.graphLayer setNeedsDisplay];
-//        
-//        CGContextRef ctx = UIGraphicsGetCurrentContext();
-//        CGContextSaveGState(ctx);
-//        
-//        //开始绘制曲线
-//        if (self.datasource) {
-//            CGFloat ypixunit = graphH/(maxY - minY);
-//            CGContextSaveGState(ctx);
-//            [[_datasource color] set];
-//            CGContextSetLineWidth(ctx, 1.0f);
-//            CGFloat lastX = 0, lastY = 0;
-//            for (NSInteger index = drawFromIndex; index < (drawToIndex+1); index++) {
-//                ChartDataEntry* data = [self.datasource entryForIndex:(int)index];
-//                CGFloat pointX = drawFromX + (index-drawFromIndex) * xstep;
-//                CGFloat pointY = myH - ((data.y - minY) * ypixunit) - ybottom;
-//                if (index == drawFromIndex) {
-//                    CGContextMoveToPoint(ctx, pointX, pointY);
-//                }else{
-//                    //绘制直线的方法
-//                    if (_datasource.mode == brokenLineMode) {
-//                        CGContextAddLineToPoint(ctx, pointX, pointY);
-//                    }else{
-//                        //绘制曲线的方法
-//                        CGContextMoveToPoint(ctx, lastX, lastY);
-//                        CGFloat X2 = (lastX+pointX)/2.0;
-//                        CGFloat Y2 = lastY;
-//                        
-//                        CGFloat X3 = (lastX+pointX)/2.0;
-//                        CGFloat Y3 = pointY;
-//                        CGContextAddCurveToPoint(ctx, X2, Y2, X3, Y3, pointX, pointY);
-//                        CGContextStrokePath(ctx);
-//                    }
-//                }
-//                lastX = pointX;
-//                lastY = pointY;
-//            }
-//            CGContextStrokePath(ctx);
-//            
-//            //开始绘制标杆
-//            [[UIColor blueColor] set];
-//            CGContextSaveGState(ctx);
-//            CGFloat pattern[2] = {3,3};
-//            CGContextSetLineWidth(ctx, 1);
-//            CGContextSetLineDash(ctx, 3, pattern, 2);
-//            CGFloat modelX = graphW * 0.8;
-//            CGFloat modelY_Star = ytop;
-//            CGFloat modelY_end = myH - ybottom;
-//            CGContextMoveToPoint(ctx, modelX, modelY_Star);
-//            CGContextAddLineToPoint(ctx, modelX, modelY_end);
-//            CGContextStrokePath(ctx);
-//            CGContextRestoreGState(ctx);
-//            
-//            //关于标杆的说明<必须解决不能整除问题，计算误差>
-//            double currntModelResult = ((fromX+modelX)-xleft)/xstep;
-//            int currntModelIndex = (int)(currntModelResult + 0.01);
-//            //        NSLog(@"fromX+modelX)-xleft = %lf   xstep = %lf  currntModelIndex = %d",fromX+modelX-xleft,  xstep, currntModelIndex);
-//            NSDictionary *attrs = [self getAttributesWithfont:[UIFont systemFontOfSize:11] Color:[UIColor whiteColor]];
-//            ChartDataEntry* data = [self.datasource entryForIndex:(int)currntModelIndex];
-//            CGFloat modelY = myH - ((data.y - minY) * ypixunit) - ybottom;
-//            NSString *Ystring = [NSString stringWithFormat:@"%lf",data.y];
+//- (void)drawXLabelS{
+//    //隐藏X轴的坐标，滑动结束在显示对应的坐标
+//    int xjump = 1;
+//    //如果很密
+//    if (xstep < xlabelminstep) {
+//        xjump = (int)(xlabelminstep / xstep) + 1;
+//    }
+//    NSDictionary *attrs = [self getAttributesWithfont:[UIFont systemFontOfSize:11] Color:[UIColor whiteColor]];
+//    for (NSInteger index = drawFromIndex; index < (drawToIndex+1); index++) {
+//        if ((index % xjump) == 0) {
+//            ChartDataEntry* data = [self.datasource entryForIndex:(int)index];
 //            NSString *string = [NSString stringWithFormat:@"%lf",data.x];
 //            CGSize size = [string sizeWithAttributes:attrs];
-//            CGSize ysize = [string sizeWithAttributes:attrs];
-//            CGPoint localpoint = CGPointMake(modelX - size.width/2, myH - xlabelbottom);
-//            CGPoint localpointY = CGPointMake(modelX - size.width/2, modelY- ysize.height/2);
+//            CGFloat pointX = drawFromX + (index-drawFromIndex) * xstep;
+//            CGPoint localpoint = CGPointMake(pointX - size.width/2, myH - (ybottom - xlabelbottom));
 //            [string drawAtPoint:localpoint withAttributes:attrs];
-//            [Ystring drawAtPoint:localpointY withAttributes:attrs];
-//            
-//            //开始绘制对应的坐标轴
-//            [self drawXaxis:self.XAxis context:ctx];
-//            [self drawYaxis:self.leftYAxis context:ctx];
-//            [self drawYaxis:self.rightYAxis context:ctx];
-//            
-//            //开始增加打点函数
-//            if (_datasource.drawCirclesEnabled) {
-//                if ([_datasource drawCircleHoleEnabled] == NO) {
-//                    [[_datasource circleColor] set];
-//                    for (NSInteger index = drawFromIndex; index < (drawToIndex+1); index++) {
-//                        ChartDataEntry* data = [self.datasource entryForIndex:(int)index];
-//                        CGFloat pointX = drawFromX + (index-drawFromIndex) * xstep;
-//                        CGFloat pointY = myH - ((data.y - minY) * ypixunit)- ybottom;
-//                        drawArc(pointX, pointY, _datasource.circleRadius);
-//                    }
-//                }else{
-//                    for (NSInteger index = drawFromIndex; index < (drawToIndex+1); index++) {
-//                        ChartDataEntry* data = [self.datasource entryForIndex:(int)index];
-//                        CGFloat pointX = drawFromX + (index-drawFromIndex) * xstep;
-//                        CGFloat pointY = myH - ((data.y - minY) * ypixunit)- ybottom;
-//                        CGPoint center = CGPointMake(pointX, pointY);
-//                        [[_datasource circleColor] set];
-//                        drawCircleRing(ctx, center, _datasource.circleRadius, _datasource.circleHoleRadius);
-//                        BOOL clearColor = CGColorEqualToColor([_datasource circleHoleColor].CGColor, [UIColor clearColor].CGColor);
-//                        if (clearColor) {
-//                            [[_datasource graphColor] set];
-//                        }else{
-//                            [[_datasource circleHoleColor] set];
-//                        }
-//                        drawArc(pointX, pointY, _datasource.circleHoleRadius);
-//                    }
-//                }
-//            }
 //        }
-//
 //    }
-//    if (layer == self.graphLayer) {
-//        
-//    }
-////    if (self.datasource) {
-////        CGFloat ypixunit = graphH/(maxY - minY);
-////        CGContextSaveGState(ctx);
-////        [[_datasource color] set];
-////        CGContextSetLineWidth(ctx, 1.0f);
-////        CGFloat lastX = 0, lastY = 0;
-////        for (NSInteger index = drawFromIndex; index < (drawToIndex+1); index++) {
-////            ChartDataEntry* data = [self.datasource entryForIndex:(int)index];
-////            CGFloat pointX = drawFromX + (index-drawFromIndex) * xstep;
-////            CGFloat pointY = graphH - ((data.y - minY) * ypixunit);
-////            if (index == drawFromIndex) {
-////                CGContextMoveToPoint(ctx, pointX, pointY);
-////            }else{
-////                //绘制直线的方法
-////                if (_datasource.mode == brokenLineMode) {
-////                    CGContextAddLineToPoint(ctx, pointX, pointY);
-////                }else{
-////                    //绘制曲线的方法
-////                    CGContextMoveToPoint(ctx, lastX, lastY);
-////                    CGFloat X2 = (lastX+pointX)/2.0;
-////                    CGFloat Y2 = lastY;
-////                    
-////                    CGFloat X3 = (lastX+pointX)/2.0;
-////                    CGFloat Y3 = pointY;
-////                    CGContextAddCurveToPoint(ctx, X2, Y2, X3, Y3, pointX, pointY);
-////                    CGContextStrokePath(ctx);
-////                }
-////            }
-////            lastX = pointX;
-////            lastY = pointY;
-////        }
-////        CGContextStrokePath(ctx);
-////        
-////        //开始绘制标杆
-////        [[UIColor blueColor] set];
-////        CGContextSaveGState(ctx);
-////        CGFloat pattern[2] = {3,3};
-////        CGContextSetLineWidth(ctx, 1);
-////        CGContextSetLineDash(ctx, 3, pattern, 2);
-////        CGFloat modelX = graphW * 0.8;
-////        CGFloat modelY_Star = ytop;
-////        CGFloat modelY_end = myH - ybottom;
-////        CGContextMoveToPoint(ctx, modelX, modelY_Star);
-////        CGContextAddLineToPoint(ctx, modelX, modelY_end);
-////        CGContextStrokePath(ctx);
-////        CGContextRestoreGState(ctx);
-////        
-////        //关于标杆的说明<必须解决不能整除问题，计算误差>
-////        double currntModelResult = ((fromX+modelX)-xleft)/xstep;
-////        int currntModelIndex = (int)(currntModelResult + 0.01);
-////        //        NSLog(@"fromX+modelX)-xleft = %lf   xstep = %lf  currntModelIndex = %d",fromX+modelX-xleft,  xstep, currntModelIndex);
-////        NSDictionary *attrs = [self getAttributesWithfont:[UIFont systemFontOfSize:11] Color:[UIColor whiteColor]];
-////        ChartDataEntry* data = [self.datasource entryForIndex:(int)currntModelIndex];
-////        CGFloat modelY = myH - ((data.y - minY) * ypixunit) - ybottom;
-////        NSString *Ystring = [NSString stringWithFormat:@"%lf",data.y];
-////        NSString *string = [NSString stringWithFormat:@"%lf",data.x];
-////        CGSize size = [string sizeWithAttributes:attrs];
-////        CGSize ysize = [string sizeWithAttributes:attrs];
-////        CGPoint localpoint = CGPointMake(modelX - size.width/2, myH - xlabelbottom);
-////        CGPoint localpointY = CGPointMake(modelX - size.width/2, modelY- ysize.height/2);
-////        [string drawAtPoint:localpoint withAttributes:attrs];
-////        [Ystring drawAtPoint:localpointY withAttributes:attrs];
-////        
-//////        //开始绘制对应的坐标轴
-//////        [self drawXaxis:self.XAxis context:ctx];
-//////        [self drawYaxis:self.leftYAxis context:ctx];
-//////        [self drawYaxis:self.rightYAxis context:ctx];
-////        
-////        //开始增加打点函数
-////        if (_datasource.drawCirclesEnabled) {
-////            if ([_datasource drawCircleHoleEnabled] == NO) {
-////                [[_datasource circleColor] set];
-////                for (NSInteger index = drawFromIndex; index < (drawToIndex+1); index++) {
-////                    ChartDataEntry* data = [self.datasource entryForIndex:(int)index];
-////                    CGFloat pointX = drawFromX + (index-drawFromIndex) * xstep;
-////                    CGFloat pointY = graphH - ((data.y - minY) * ypixunit);
-////                    drawArc(pointX, pointY, _datasource.circleRadius);
-////                }
-////            }else{
-////                for (NSInteger index = drawFromIndex; index < (drawToIndex+1); index++) {
-////                    ChartDataEntry* data = [self.datasource entryForIndex:(int)index];
-////                    CGFloat pointX = drawFromX + (index-drawFromIndex) * xstep;
-////                    CGFloat pointY = graphH - ((data.y - minY) * ypixunit);
-////                    CGPoint center = CGPointMake(pointX, pointY);
-////                    [[_datasource circleColor] set];
-////                    drawCircleRing(ctx, center, _datasource.circleRadius, _datasource.circleHoleRadius);
-////                    BOOL clearColor = CGColorEqualToColor([_datasource circleHoleColor].CGColor, [UIColor clearColor].CGColor);
-////                    if (clearColor) {
-////                        [[_datasource graphColor] set];
-////                    }else{
-////                        [[_datasource circleHoleColor] set];
-////                    }
-////                    drawArc(pointX, pointY, _datasource.circleHoleRadius);
-////                }
-////            }
-////        }
-////    }
 //}
+
+
 
 
 

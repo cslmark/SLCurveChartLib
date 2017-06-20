@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A2FA2011EF8CA8300EA1B4A /* SLLineChartData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2FA2001EF8CA8300EA1B4A /* SLLineChartData.m */; };
 		2A70887A1EF11ABB00CAC9FE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7088791EF11ABB00CAC9FE /* main.m */; };
 		2A70887D1EF11ABB00CAC9FE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A70887C1EF11ABB00CAC9FE /* AppDelegate.m */; };
 		2A7088801EF11ABB00CAC9FE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A70887F1EF11ABB00CAC9FE /* ViewController.m */; };
@@ -31,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A2FA1FF1EF8CA8300EA1B4A /* SLLineChartData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLLineChartData.h; sourceTree = "<group>"; };
+		2A2FA2001EF8CA8300EA1B4A /* SLLineChartData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLLineChartData.m; sourceTree = "<group>"; };
 		2A7088751EF11ABB00CAC9FE /* SLChartLibDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SLChartLibDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A7088791EF11ABB00CAC9FE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2A70887B1EF11ABB00CAC9FE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -189,6 +192,8 @@
 				2A7088B21EF11E4300CAC9FE /* SLChartBaseDataSet.m */,
 				2A7088B31EF11E4300CAC9FE /* SLLineChartDataSet.h */,
 				2A7088B41EF11E4300CAC9FE /* SLLineChartDataSet.m */,
+				2A2FA1FF1EF8CA8300EA1B4A /* SLLineChartData.h */,
+				2A2FA2001EF8CA8300EA1B4A /* SLLineChartData.m */,
 				2A7088A01EF11D3800CAC9FE /* Standard */,
 			);
 			path = Data;
@@ -318,6 +323,7 @@
 				2A7088B51EF11E4300CAC9FE /* SLChartBaseDataSet.m in Sources */,
 				2A7088AD1EF11D3800CAC9FE /* ChartHighlight.m in Sources */,
 				2A7088AC1EF11D3800CAC9FE /* ChartComponentBase.m in Sources */,
+				2A2FA2011EF8CA8300EA1B4A /* SLLineChartData.m in Sources */,
 				2A7088B61EF11E4300CAC9FE /* SLLineChartDataSet.m in Sources */,
 				2A7088BA1EF11E9400CAC9FE /* SLGCDTimerTool.m in Sources */,
 				2A7088C41EF1221000CAC9FE /* YRightAxisFormtter.m in Sources */,

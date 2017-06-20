@@ -27,7 +27,7 @@ A Easy Way to draw a curve chart for iOS!
 ![image](https://github.com/cslmark/SLCurveChartDemo/blob/master/CurveShowPics/WX20170614-172500@2x.png
 )
 * 一张图中绘制多个曲线，注意checkout分支
-![image](https://github.com/cslmark/SLCurveChartDemo/blob/master/CurveShowPics/WX20170614-172500@2x.png
+![image](https://github.com/cslmark/SLCurveChartDemo/blob/master/CurveShowPics/WX20170614-172500@2x.png)
 
 ## 使用说明
 目前还未上传到cocoapod所以只能通过源码集成

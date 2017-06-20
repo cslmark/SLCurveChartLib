@@ -26,11 +26,9 @@ A Easy Way to draw a curve chart for iOS!
 * 同时显示X轴，左右两侧的Y轴以及对应的网格
 ![image](https://github.com/cslmark/SLCurveChartDemo/blob/master/CurveShowPics/WX20170614-172500@2x.png
 )
-* 一张图中绘制多个曲线，注意checkout分支
-![image](https://github.com/cslmark/SLCurveChartDemo/blob/master/CurveShowPics/WX20170620-162326@2x.png
+* 一张图表中显示多个曲线，主要需要同步的是mulcurDev分支
+![image](https://github.com/cslmark/SLCurveChartLib/blob/master/CurveShowPics/WX20170620-162326%402x.png
 )
-
-
 ## 使用说明
 Lib文件夹如下：
 ![image](https://github.com/cslmark/SLCurveChartDemo/blob/master/CurveShowPics/WX20170614-173616@2x.png

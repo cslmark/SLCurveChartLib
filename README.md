@@ -13,13 +13,12 @@ A Easy Way to draw a curve chart for iOS!
 近日从网友反映来看，可能代码注释不多，大家可能不知道从何下手，比如绘制多条曲线，如何自定义对应坐标的刻度显示，所以附上对应的框架逻辑图。
 还有该框架的封装的基本结构很大参考了Charts框架的封装形式，内部实现机制不一致，也是作为Charts框架的致敬吧！
 近日从网友反映来看，可能代码注释不多，大家可能不知道从何下手，比如绘制多条曲线，如何自定义对应坐标的刻度显示，所以附上对应的框架逻辑图。
-还有
-1. 整个图表的整体组件框架
-![image](https://github.com/cslmark/SLCurveChartLib/blob/master/CurveShowPics/SLChartLib整体结构体.png)
-2. 图表组件部分各个类的继承框架关系
-![image](https://github.com/cslmark/SLCurveChartLib/blob/master/CurveShowPics/图形基本类关系图.png)
-3. 图表中各个数据源的集成关系以及框架预留的拓展部分
-![image](https://github.com/cslmark/SLCurveChartLib/blob/master/CurveShowPics/数据类型的流程图.png)
+1. 整个图表的整体框架组件
+![image](https://github.com/cslmark/SLCurveChartLib/blob/master/CurveShowPics/%E6%A1%86%E6%9E%B6%E6%B5%81%E7%A8%8B%E5%9B%BE/SLChartLib%E6%95%B4%E4%BD%93%E7%BB%93%E6%9E%84%E4%BD%93.png)
+2. 图表组件各个类的继承关系图谱
+![image](https://github.com/cslmark/SLCurveChartLib/blob/master/CurveShowPics/%E6%A1%86%E6%9E%B6%E6%B5%81%E7%A8%8B%E5%9B%BE/%E5%9B%BE%E5%BD%A2%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%85%B3%E7%B3%BB%E5%9B%BE.png)
+3. 图标中各个数据源的继承关系以及框架预留拓展部分
+![image](https://github.com/cslmark/SLCurveChartLib/blob/master/CurveShowPics/%E6%A1%86%E6%9E%B6%E6%B5%81%E7%A8%8B%E5%9B%BE/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%B5%81%E7%A8%8B%E5%9B%BE.png)
 
 ## 效果展示
 使用该库可以非常灵活的配置曲线颜色，曲线样式，对应X轴和自定义的Y轴配置，动态纵坐标，是否使能缩放X轴，以及对应网格等等。效果如下图所示：

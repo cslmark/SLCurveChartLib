@@ -48,6 +48,8 @@ A Easy Way to draw a curve chart for iOS!
 )
 * 出现填充和渐变
 
+![image](https://github.com/cslmark/SLCurveChartLib/blob/master/CurveShowPics/WX20170623-101032.png)
+
 ## 使用说明
 Lib文件夹如下：
 ![image](https://github.com/cslmark/SLCurveChartDemo/blob/master/CurveShowPics/WX20170614-173616@2x.png

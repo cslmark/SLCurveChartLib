@@ -87,6 +87,7 @@
     dataSet.drawCircleHoleEnabled = YES;
     dataSet.drawCirclesEnabled = YES;
     dataSet.drawCirclesEnabled = YES;
+    dataSet.drawFilledEnabled = YES;
     
     SLLineChartDataSet* dataSet2 = [[SLLineChartDataSet alloc] initWithValues:self.tempArray0 label:@"Default"];
     dataSet2.lineWidth = 1.0;
@@ -98,6 +99,9 @@
     dataSet2.drawCircleHoleEnabled = YES;
     dataSet2.drawCirclesEnabled = YES;
     dataSet2.drawCirclesEnabled = YES;
+    dataSet2.drawFilledEnabled = YES;
+    dataSet2.fillColor = [UIColor colorWithHex:@"#26497c" andalpha:0.5];
+    dataSet2.lineFillMode = SingleColorFillMode;
     
     NSMutableArray* tempArray = [NSMutableArray arrayWithCapacity:1];
     [tempArray addObject:dataSet];

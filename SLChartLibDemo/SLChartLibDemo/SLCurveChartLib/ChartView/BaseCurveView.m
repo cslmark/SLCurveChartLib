@@ -529,19 +529,25 @@
               context:(CGContextRef) ctx
              yPixunit:(CGFloat) ypixunit{
     CGContextSaveGState(ctx);
-    [[dataSet color] set];
-    CGContextSetLineWidth(ctx, 1.0f);
     CGFloat lastX = 0, lastY = 0;
+    CGMutablePathRef curPath = CGPathCreateMutable();
+    CGMutablePathRef fillPath = CGPathCreateMutable();
     for (NSInteger index = drawFromIndex; index < (drawToIndex+1); index++) {
         ChartDataEntry* data = [dataSet entryForIndex:(int)index];
         CGFloat pointX = leftYAxisW + drawFromX + (index-drawFromIndex) * xstep;
         CGFloat pointY = myH - ((data.y - minY) * ypixunit) - ybottom;
         if (index == drawFromIndex) {
-            CGContextMoveToPoint(ctx, pointX, pointY);
+//            CGContextMoveToPoint(ctx, pointX, pointY);
+            CGPathMoveToPoint(curPath, NULL, pointX, pointY);
+//             CGPathMoveToPoint(fillPath, NULL, pointX, pointY);
+            CGPathMoveToPoint(fillPath, NULL, pointX, myH-ybottom);
+            CGPathAddLineToPoint(fillPath, NULL, pointX, pointY);
         }else{
             //绘制直线的方法
             if (dataSet.mode == brokenLineMode) {
-                CGContextAddLineToPoint(ctx, pointX, pointY);
+//                CGContextAddLineToPoint(ctx, pointX, pointY);
+                CGPathAddLineToPoint(curPath, NULL, pointX, pointY);
+                CGPathAddLineToPoint(fillPath, NULL, pointX, pointY);
             }else{
                 //绘制曲线的方法
                 CGContextMoveToPoint(ctx, lastX, lastY);
@@ -550,14 +556,48 @@
                 
                 CGFloat X3 = (lastX+pointX)/2.0;
                 CGFloat Y3 = pointY;
-                CGContextAddCurveToPoint(ctx, X2, Y2, X3, Y3, pointX, pointY);
-                CGContextStrokePath(ctx);
+//                CGContextAddCurveToPoint(ctx, X2, Y2, X3, Y3, pointX, pointY);
+                CGPathAddCurveToPoint(curPath, NULL, X2, Y2, X3, Y3, pointX, pointY);
+                CGPathAddCurveToPoint(fillPath, NULL, X2, Y2, X3, Y3, pointX, pointY);
+//                CGContextStrokePath(ctx);
+            }
+            if (index == drawToIndex) {
+                CGPathAddLineToPoint(fillPath, NULL, pointX, myH-ybottom);
+                CGPathCloseSubpath(fillPath);
             }
         }
         lastX = pointX;
         lastY = pointY;
     }
+    
+    //是否绘制渐变的填充颜色
+    if (dataSet.drawFilledEnabled) {
+        CGContextSaveGState(ctx);
+        CGContextAddPath(ctx, fillPath);
+        CGContextClip(ctx);
+        CGRect graphRect = CGRectMake(leftYAxisW, ytop, graphW, graphH);
+        if (dataSet.lineFillMode == gradientolorFillMode) {
+            if (dataSet.gradientColors.count) {
+                [self drawGradientColor:ctx rect:graphRect options:kCGGradientDrawsAfterEndLocation colors:dataSet.gradientColors];
+            }
+        }else{
+            [dataSet.fillColor set];
+//            CGContextAddRect(ctx, graphRect);
+            CGContextFillRect(ctx, graphRect);
+//            CGContextAddEllipseInRect(ctx, graphRect);
+        }
+        CGContextRestoreGState(ctx);
+    }
+
+    
+    //开始绘制曲线
+    [[dataSet color] set];
+    CGContextSetLineWidth(ctx, dataSet.lineWidth);
+    CGContextAddPath(ctx, curPath);
     CGContextStrokePath(ctx);
+    
+    CGPathRelease(curPath);
+    CGPathRelease(fillPath);
     
     //开始增加打点函数
     if (dataSet.drawCirclesEnabled) {
@@ -832,6 +872,34 @@ void drawCircleRing(CGContextRef ctx, CGPoint center, CGFloat outRadius, CGFloat
 //        }
 //    }
 //}
+
+#pragma mark - 增加绘制渐变色的方法
+- (void) drawGradientColor:(CGContextRef)p_context
+                      rect:(CGRect)p_clipRect
+                   options:(CGGradientDrawingOptions)p_options
+                    colors:(NSArray *)p_colors {
+    CGContextSaveGState(p_context);// 保持住现在的context
+    CGContextClipToRect(p_context, p_clipRect);// 截取对应的context
+    int colorCount = (int)p_colors.count;
+    int numOfComponents = 4;
+    CGColorSpaceRef rgb = CGColorSpaceCreateDeviceRGB();
+    CGFloat colorComponents[colorCount * numOfComponents];
+    for (int i = 0; i < colorCount; i++) {
+        UIColor *color = p_colors[i];
+        CGColorRef temcolorRef = color.CGColor;
+        const CGFloat *components = CGColorGetComponents(temcolorRef);
+        for (int j = 0; j < numOfComponents; ++j) {
+            colorComponents[i * numOfComponents + j] = components[j];
+        }
+    }
+    CGGradientRef gradient =  CGGradientCreateWithColorComponents(rgb, colorComponents, NULL, colorCount);
+    CGColorSpaceRelease(rgb);
+    CGPoint startPoint = p_clipRect.origin;
+    CGPoint endPoint = CGPointMake(CGRectGetMinX(p_clipRect), CGRectGetMaxY(p_clipRect));
+    CGContextDrawLinearGradient(p_context, gradient, startPoint, endPoint, p_options);
+    CGGradientRelease(gradient);
+    CGContextRestoreGState(p_context);// 恢复到之前的context
+}
 
 
 

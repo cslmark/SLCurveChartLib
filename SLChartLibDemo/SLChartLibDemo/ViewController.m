@@ -88,6 +88,7 @@
     dataSet.drawCirclesEnabled = YES;
     dataSet.drawCirclesEnabled = YES;
     dataSet.drawFilledEnabled = YES;
+    dataSet.gradientColors = @[[UIColor greenColor], [UIColor clearColor]];
     
     SLLineChartDataSet* dataSet2 = [[SLLineChartDataSet alloc] initWithValues:self.tempArray0 label:@"Default"];
     dataSet2.lineWidth = 1.0;
@@ -108,6 +109,7 @@
     [tempArray addObject:dataSet2];
     SLLineChartData* dataSource = [[SLLineChartData alloc] initWithValues:tempArray];
     self.dataSource = dataSource;
+    dataSource.graphColor = [UIColor blackColor];
     
     [self.myView setScaleXEnabled:@(YES)];
     [self.myView setDynamicYAixs:@(NO)];

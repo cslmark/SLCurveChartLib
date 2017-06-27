@@ -619,7 +619,7 @@
                 drawCircleRing(ctx, center, dataSet.circleRadius, dataSet.circleHoleRadius);
                 BOOL clearColor = CGColorEqualToColor([dataSet circleHoleColor].CGColor, [UIColor clearColor].CGColor);
                 if (clearColor) {
-                    [[dataSet graphColor] set];
+                    [[self.datasource graphColor] set];
                 }else{
                     [[dataSet circleHoleColor] set];
                 }

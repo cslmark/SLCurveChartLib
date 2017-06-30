@@ -62,6 +62,12 @@
     //对缩放进行设置的变量
     CGFloat xstepMax;
     CGFloat xstepMin;
+    
+    //上一时刻的速度，当前时刻的速度，当前时刻的时间
+    CGFloat last_v;
+    CGFloat current_v;
+    CGFloat time_last;
+    CGFloat time_now;
 }
 
 //曲线部分的图层
@@ -290,7 +296,6 @@
     
     xstepMax = graphW / [self.visibleXRangeMinimum intValue];
     xstepMin = graphW / [self.visibleXRangeMaximum intValue];
-    
     
     //开始计算
     [self calcDraw];
@@ -718,15 +723,36 @@
 
 -(void) panGes:(UIPanGestureRecognizer *) panGes{
 //    NSLog(@"panGes = jdlsjalfjlsdajlfjas");
+    
     if(panGes.state == UIGestureRecognizerStateBegan){
+        CGPoint velocity = [panGes velocityInView:panGes.view];
+//        NSLog(@"当前的速度是: %@", NSStringFromCGPoint(velocity));
+        CGPoint translation = [panGes translationInView:self];
+//        NSLog(@"当前的位移是: %@", NSStringFromCGPoint(translation));
+
+        last_v = velocity.x;
+//        CGFloat current_v = ;
+        time_last = [[NSDate date] timeIntervalSince1970];
+//        CGFloat time_now;
         
     }
     if(panGes.state == UIGestureRecognizerStateChanged){
+        time_now = [[NSDate date] timeIntervalSince1970];
+        double time = (time_now - time_last);
+        CGPoint velocity = [panGes velocityInView:panGes.view];
+        current_v = velocity.x;
+        CGFloat a = (current_v - last_v)/time;
+        CGFloat move_S = (last_v * time) + (time * time) * a * 0.5;
+        NSLog(@"位移的距离为:  %lf", move_S);
+        last_v = current_v;
+        time_last = time_now;
+        
         //触点移动的绝对距离
-        //CGPoint location = [gr locationInView:self.view];
+//        CGPoint location = [gr locationInView:self.view];
         //移动两点之间的相对距离
         CGPoint translation = [panGes translationInView:self];
-        fromX -= translation.x;
+//        fromX -= translation.x;
+        fromX -= (move_S + translation.x);
         //限制条件
         if (fromX < 0) {
             fromX = 0;
@@ -735,18 +761,30 @@
             fromX = ([self.datasource entryCount]*xstep +   xleft + xright) - graphW;
         }
         [self starRefreashTimer];
-//        [self setNeedsDisplay];
+        //[self setNeedsDisplay];
         //每次移动后，将本次移动的距离置零
         //下一次再移动时，记录的距离就是最后两点间的距离
         //而不是距离第一个点的距离
         [panGes setTranslation:CGPointZero inView:self];
     }
     if(panGes.state == UIGestureRecognizerStateEnded){
+        time_now = [[NSDate date] timeIntervalSince1970];
+        double time = (time_now - time_last);
+        CGPoint velocity = [panGes velocityInView:panGes.view];
+        current_v = velocity.x;
+        CGFloat a = (current_v - last_v)/time;
+        CGFloat move_S = (last_v * time) + (time * time) * a * 0.5;
+        NSLog(@"位移的距离为:  %lf", move_S);
+        last_v = current_v;
+        time_last = time_now;
+        
+        
         //触点移动的绝对距离
         //CGPoint location = [gr locationInView:self.view];
         //移动两点之间的相对距离
         CGPoint translation = [panGes translationInView:self];
-        fromX -= translation.x;
+//        fromX -= translation.x;
+        fromX -= (move_S + translation.x);
         //限制条件
         if (fromX < 0) {
             fromX = 0;

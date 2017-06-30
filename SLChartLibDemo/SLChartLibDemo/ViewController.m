@@ -33,6 +33,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    CAGradientLayer* gradientLayer  = [CAGradientLayer layer];
+    gradientLayer.frame = self.view.bounds;
+    gradientLayer.startPoint = CGPointMake(0, 0);
+    gradientLayer.endPoint = CGPointMake(0, 1);
+    
+    //设置颜色数组
+    gradientLayer.colors = @[(__bridge id)[UIColor blueColor].CGColor,
+                               (__bridge id)[UIColor greenColor].CGColor];
+    [self.view.layer insertSublayer:gradientLayer atIndex:0];
+    
+    
     ChartAxisBase* xAxis = self.myView.XAxis;
     xAxis.axisValueFormatter = [[XAxisFormtter alloc] init];
     xAxis.drawLabelsEnabled = YES;
@@ -109,7 +121,8 @@
     [tempArray addObject:dataSet2];
     SLLineChartData* dataSource = [[SLLineChartData alloc] initWithValues:tempArray];
     self.dataSource = dataSource;
-    dataSource.graphColor = [UIColor blackColor];
+    dataSource.graphColor = [UIColor clearColor];
+    
     
     [self.myView setScaleXEnabled:@(YES)];
     [self.myView setDynamicYAixs:@(NO)];
@@ -127,7 +140,7 @@
 -(NSMutableArray*) tempArray0{
     if (_tempArray0 == nil) {
         _tempArray0 = [NSMutableArray arrayWithCapacity:1];
-        for (int i = 0; i < 200; i++) {
+        for (int i = 0; i < 4000; i++) {
             int temp = arc4random()%100 + 1;
             if (i < 20) {
                 temp = arc4random()%50 + 1;
@@ -142,7 +155,7 @@
 -(NSMutableArray*) tempArray1{
     if (_tempArray1 == nil) {
         _tempArray1 = [NSMutableArray arrayWithCapacity:1];
-        for (int i = 0; i < 200; i++) {
+        for (int i = 0; i < 4000; i++) {
             int temp = arc4random()%100 + 1;
             if (i < 20) {
                 temp = arc4random()%50 + 1;

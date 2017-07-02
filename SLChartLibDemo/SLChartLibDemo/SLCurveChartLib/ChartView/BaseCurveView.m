@@ -8,7 +8,7 @@
 
 #import "BaseCurveView.h"
 #import "SLGCDTimerTool.h"
-//#import "HighLightView.h"
+#import "SLAccelerator.h"
 
 @interface BaseCurveView()
 {
@@ -63,11 +63,8 @@
     CGFloat xstepMax;
     CGFloat xstepMin;
     
-    //上一时刻的速度，当前时刻的速度，当前时刻的时间
-    CGFloat last_v;
-    CGFloat current_v;
-    CGFloat time_last;
-    CGFloat time_now;
+    //充当加速器和减速器
+    SLAccelerator* accelerator;
 }
 
 //曲线部分的图层
@@ -163,6 +160,12 @@
     
     leftYAxisW = 0;
     rightYAxisW = 0;
+    
+    //初始化默认的加速器
+    accelerator = [[SLAccelerator alloc] init];
+    accelerator.enabled = YES;
+    accelerator.decelerationEnable = YES;
+    accelerator.decelerationRate = 100.0f;
 }
 
 #pragma mark - 懒加载部分
@@ -726,33 +729,18 @@
     
     if(panGes.state == UIGestureRecognizerStateBegan){
         CGPoint velocity = [panGes velocityInView:panGes.view];
-//        NSLog(@"当前的速度是: %@", NSStringFromCGPoint(velocity));
-        CGPoint translation = [panGes translationInView:self];
-//        NSLog(@"当前的位移是: %@", NSStringFromCGPoint(translation));
-
-        last_v = velocity.x;
-//        CGFloat current_v = ;
-        time_last = [[NSDate date] timeIntervalSince1970];
-//        CGFloat time_now;
-        
+        if (accelerator && accelerator.enabled) {
+            [accelerator panGesStarWith:velocity.x];
+        }
     }
     if(panGes.state == UIGestureRecognizerStateChanged){
-        time_now = [[NSDate date] timeIntervalSince1970];
-        double time = (time_now - time_last);
-        CGPoint velocity = [panGes velocityInView:panGes.view];
-        current_v = velocity.x;
-        CGFloat a = (current_v - last_v)/time;
-        CGFloat move_S = (last_v * time) + (time * time) * a * 0.5;
-        NSLog(@"位移的距离为:  %lf", move_S);
-        last_v = current_v;
-        time_last = time_now;
-        
-        //触点移动的绝对距离
-//        CGPoint location = [gr locationInView:self.view];
-        //移动两点之间的相对距离
         CGPoint translation = [panGes translationInView:self];
-//        fromX -= translation.x;
-        fromX -= (move_S + translation.x);
+        double distance = translation.x;
+        if (accelerator && accelerator.enabled) {
+            CGPoint velocity = [panGes velocityInView:panGes.view];
+            distance += [accelerator panGesStateChangeWith:velocity.x];
+        }
+        fromX -= distance;
         //限制条件
         if (fromX < 0) {
             fromX = 0;
@@ -768,23 +756,25 @@
         [panGes setTranslation:CGPointZero inView:self];
     }
     if(panGes.state == UIGestureRecognizerStateEnded){
-        time_now = [[NSDate date] timeIntervalSince1970];
-        double time = (time_now - time_last);
-        CGPoint velocity = [panGes velocityInView:panGes.view];
-        current_v = velocity.x;
-        CGFloat a = (current_v - last_v)/time;
-        CGFloat move_S = (last_v * time) + (time * time) * a * 0.5;
-        NSLog(@"位移的距离为:  %lf", move_S);
-        last_v = current_v;
-        time_last = time_now;
-        
-        
-        //触点移动的绝对距离
-        //CGPoint location = [gr locationInView:self.view];
-        //移动两点之间的相对距离
         CGPoint translation = [panGes translationInView:self];
-//        fromX -= translation.x;
-        fromX -= (move_S + translation.x);
+        double distance = translation.x;
+        if (accelerator && accelerator.enabled) {
+            CGPoint velocity = [panGes velocityInView:panGes.view];
+            __weak typeof(self) weakSelf = self;
+            distance += [accelerator panGesStateEndWith:velocity.x decelerationBlock:^(double moveDistance) {
+                __strong typeof(self) strongSelf = weakSelf;
+                fromX -= moveDistance;
+                //限制条件
+                if (fromX < 0) {
+                    fromX = 0;
+                }
+                if (fromX > (([self.datasource entryCount]*xstep + xleft + xright) - graphW)) {
+                    fromX = ([self.datasource entryCount]*xstep + xleft  + xright) - graphW;
+                }
+                [strongSelf setNeedsDisplay];
+            }];
+        }
+        fromX -= distance;
         //限制条件
         if (fromX < 0) {
             fromX = 0;
@@ -792,8 +782,6 @@
         if (fromX > (([self.datasource entryCount]*xstep + xleft + xright) - graphW)) {
             fromX = ([self.datasource entryCount]*xstep + xleft  + xright) - graphW;
         }
-        
-//        [self calacFormodel];
         [self cancelRefreashTimer];
         [self setNeedsDisplay];
         //每次移动后，将本次移动的距离置零
@@ -805,6 +793,9 @@
 
 - (void)pinchGes:(UIPinchGestureRecognizer *)ges
 {
+    if (accelerator && accelerator.enabled) {
+        [accelerator stopTracking];
+    }
     //取到缩放手势中，当前的缩放比例 获取当前手势的位置
     CGFloat scale = ges.scale;
     if (ges.state == UIGestureRecognizerStateBegan) {
@@ -832,6 +823,9 @@
 }
 
 -(void) tapGes:(UITapGestureRecognizer *) tapGes{
+    if (accelerator && accelerator.enabled) {
+        [accelerator stopTracking];
+    }
     if (self.hightLight.enabled) {
         CGPoint startPos = [tapGes locationInView:tapGes.view];
         CGFloat x = startPos.x;

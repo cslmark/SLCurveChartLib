@@ -28,6 +28,7 @@
 		2A7088C31EF1221000CAC9FE /* YAxisFormtter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7088BF1EF1221000CAC9FE /* YAxisFormtter.m */; };
 		2A7088C41EF1221000CAC9FE /* YRightAxisFormtter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7088C11EF1221000CAC9FE /* YRightAxisFormtter.m */; };
 		2A7088CA1EF1275400CAC9FE /* statistics_data_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A7088C91EF1275400CAC9FE /* statistics_data_bg.png */; };
+		2ABCABDE1F090D91001CB20F /* SLAccelerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ABCABDD1F090D91001CB20F /* SLAccelerator.m */; };
 		2AF19D8D1EF261C7005C4BDE /* HighLightFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF19D8C1EF261C7005C4BDE /* HighLightFormatter.m */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,8 @@
 		2A7088C01EF1221000CAC9FE /* YRightAxisFormtter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRightAxisFormtter.h; sourceTree = "<group>"; };
 		2A7088C11EF1221000CAC9FE /* YRightAxisFormtter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YRightAxisFormtter.m; sourceTree = "<group>"; };
 		2A7088C91EF1275400CAC9FE /* statistics_data_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statistics_data_bg.png; sourceTree = "<group>"; };
+		2ABCABDC1F090D91001CB20F /* SLAccelerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLAccelerator.h; sourceTree = "<group>"; };
+		2ABCABDD1F090D91001CB20F /* SLAccelerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLAccelerator.m; sourceTree = "<group>"; };
 		2AF19D8B1EF261C7005C4BDE /* HighLightFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighLightFormatter.h; sourceTree = "<group>"; };
 		2AF19D8C1EF261C7005C4BDE /* HighLightFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighLightFormatter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -166,6 +169,7 @@
 		2A7088931EF11D3800CAC9FE /* ChartView */ = {
 			isa = PBXGroup;
 			children = (
+				2ABCABDB1F090D65001CB20F /* accelerator */,
 				2A7088941EF11D3800CAC9FE /* BaseCurveView.h */,
 				2A7088951EF11D3800CAC9FE /* BaseCurveView.m */,
 			);
@@ -235,6 +239,15 @@
 				2A7088C91EF1275400CAC9FE /* statistics_data_bg.png */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		2ABCABDB1F090D65001CB20F /* accelerator */ = {
+			isa = PBXGroup;
+			children = (
+				2ABCABDC1F090D91001CB20F /* SLAccelerator.h */,
+				2ABCABDD1F090D91001CB20F /* SLAccelerator.m */,
+			);
+			path = accelerator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,6 +326,7 @@
 				2A7088AA1EF11D3800CAC9FE /* BaseCurveView.m in Sources */,
 				2A7088A91EF11D3800CAC9FE /* UIColor+SLExtension.m in Sources */,
 				2AF19D8D1EF261C7005C4BDE /* HighLightFormatter.m in Sources */,
+				2ABCABDE1F090D91001CB20F /* SLAccelerator.m in Sources */,
 				2A7088AF1EF11D3800CAC9FE /* ChartDataEntry.m in Sources */,
 				2A7088801EF11ABB00CAC9FE /* ViewController.m in Sources */,
 				2A7088B01EF11D3800CAC9FE /* ChartDataEntryBase.m in Sources */,

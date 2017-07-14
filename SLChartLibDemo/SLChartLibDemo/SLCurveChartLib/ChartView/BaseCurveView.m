@@ -17,8 +17,7 @@
     float xright;
     float xstep;
     NSNumber* xstepNum;
-    
-    
+
     //View的宽度
     CGFloat myW;
     CGFloat myH;
@@ -71,6 +70,9 @@
 @property (nonatomic, strong) UIPinchGestureRecognizer *pinchGes;
 @property (nonatomic, strong) UIPanGestureRecognizer   *panGes;
 @property (nonatomic, strong) UITapGestureRecognizer   *tapGes;
+
+//绘制Y轴基准线的数组
+@property (nonatomic, strong) NSMutableArray<ChartBaseLine *>* yBaseLineArray;
 @end
 
 @implementation BaseCurveView
@@ -166,9 +168,21 @@
     accelerator.enabled = YES;
     accelerator.decelerationEnable = YES;
     accelerator.decelerationRate = 100.0f;
+    
+    //默认的PageScroller是Disable
+    if (self.pageScrollerEnable == nil) {
+        self.pageScrollerEnable = @(NO);
+    }
 }
 
 #pragma mark - 懒加载部分
+-(NSMutableArray *) yBaseLineArray{
+    if (_yBaseLineArray == nil) {
+        _yBaseLineArray = [NSMutableArray array];
+    }
+    return _yBaseLineArray;
+}
+
 -(NSNumber *) dynamicYAixs{
     if (_dynamicYAixs == nil) {
         _dynamicYAixs = @(NO);
@@ -216,6 +230,15 @@
             self.pinchGes = nil;
         }
     }
+}
+
+#pragma mark - 基准线的方法提供
+-(void) addYBaseLineWith:(ChartBaseLine *) baseLine{
+    [self.yBaseLineArray addObject:baseLine];
+}
+
+-(void) removeYBaseLineWith:(ChartBaseLine *) baseLine{
+    [self.yBaseLineArray removeObject:baseLine];
 }
 
 #pragma mark - 当数据源发生了改变的时候，采用该方法进行调用
@@ -308,6 +331,11 @@
     
     //开始绘制曲线
     if (self.datasource) {
+        if ([self.pageScrollerEnable boolValue]) {
+            accelerator.pageWidth = graphW;
+            accelerator.pageScrollerEnable = [self.pageScrollerEnable boolValue];
+        }
+        
         CGContextSaveGState(ctx);
         //开始绘制对应的坐标轴
         [self drawYaxis:self.leftYAxis context:ctx];
@@ -319,6 +347,9 @@
         CGRect clipRect = CGRectMake(leftYAxisW, 0, graphW, myH);
         CGContextClipToRect(ctx, clipRect);
         [self drawXaxis:self.XAxis context:ctx];
+        
+        //开始绘制基准线
+        [self drawYbaseLineWithContext:ctx yPixunit:ypixunit];
         
         for (id<SLChartDataProtocol> dataSet in self.datasource.dataSets) {
             [self drawCurveWith:dataSet context:ctx yPixunit:ypixunit];
@@ -638,6 +669,31 @@
     CGContextRestoreGState(ctx);
 }
 
+-(void) drawYbaseLineWithContext:(CGContextRef) ctx
+                        yPixunit:(CGFloat) ypixunit{
+    CGContextSaveGState(ctx);
+    for (ChartBaseLine* baseLine in self.yBaseLineArray) {
+        if (baseLine.enabled) {
+            CGContextSaveGState(ctx);
+            [baseLine.lineColor set];
+            if (baseLine.lineMode == ChartBaseLineDashMode) {
+                CGFloat pattern[4] = {5,4,5,4};
+                CGContextSetLineWidth(ctx, baseLine.lineWidth);
+                CGContextSetLineDash(ctx, fromX, pattern, 4);
+            }
+            
+            CGFloat baseLineY, starX, endX;
+            baseLineY = myH - ((baseLine.yValue - minY) * ypixunit)- ybottom;
+            starX = leftYAxisW;
+            endX = myW-rightYAxisW;
+            CGContextMoveToPoint(ctx, starX, baseLineY);
+            CGContextAddLineToPoint(ctx, endX, baseLineY);
+            CGContextStrokePath(ctx);
+            CGContextRestoreGState(ctx);
+        }
+    }
+    CGContextRestoreGState(ctx);
+}
 
 
 #pragma mark - 计算部分获取最大的数值
@@ -729,8 +785,9 @@
     
     if(panGes.state == UIGestureRecognizerStateBegan){
         CGPoint velocity = [panGes velocityInView:panGes.view];
+        CGPoint translation = [panGes translationInView:self];
         if (accelerator && accelerator.enabled) {
-            [accelerator panGesStarWith:velocity.x];
+            [accelerator panGesStarWithVelocity:velocity translation:translation];
         }
     }
     if(panGes.state == UIGestureRecognizerStateChanged){
@@ -738,7 +795,7 @@
         double distance = translation.x;
         if (accelerator && accelerator.enabled) {
             CGPoint velocity = [panGes velocityInView:panGes.view];
-            distance += [accelerator panGesStateChangeWith:velocity.x];
+            distance = [accelerator panGesStateChangeWithVelocity:velocity translation:translation];
         }
         fromX -= distance;
         //限制条件
@@ -761,7 +818,7 @@
         if (accelerator && accelerator.enabled) {
             CGPoint velocity = [panGes velocityInView:panGes.view];
             __weak typeof(self) weakSelf = self;
-            distance += [accelerator panGesStateEndWith:velocity.x decelerationBlock:^(double moveDistance) {
+            distance = [accelerator panGesStateEndWithVelocity:velocity translation:translation decelerationBlock:^(double moveDistance) {
                 __strong typeof(self) strongSelf = weakSelf;
                 fromX -= moveDistance;
                 //限制条件

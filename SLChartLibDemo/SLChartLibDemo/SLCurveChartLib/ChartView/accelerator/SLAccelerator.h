@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @class VelocityPoint;
 
@@ -22,11 +23,15 @@ typedef void(^DecelerationBlock)(double moveDistance);
 //是否运行减速，以及加速的大小
 @property (nonatomic,  assign) BOOL   decelerationEnable;
 @property (nonatomic,  assign) double decelerationRate;
+@property (nonatomic,  assign) double pageWidth;
+@property (nonatomic,  assign) BOOL   pageScrollerEnable;
 
 
--(void) panGesStarWith:(double) velocity;
--(double) panGesStateChangeWith:(double) velocity;
--(double) panGesStateEndWith:(double) velocity  decelerationBlock:(DecelerationBlock) deceBlock;
+-(void) panGesStarWithVelocity:(CGPoint) velocity translation:(CGPoint) translation;
+-(double) panGesStateChangeWithVelocity:(CGPoint) velocity translation:(CGPoint) translation;
+-(double) panGesStateEndWithVelocity:(CGPoint) velocity
+                         translation:(CGPoint) translation
+                   decelerationBlock:(DecelerationBlock) deceBlock;
 -(void) stopTracking;
 @end
 

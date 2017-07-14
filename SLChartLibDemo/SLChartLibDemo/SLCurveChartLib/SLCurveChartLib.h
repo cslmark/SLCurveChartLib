@@ -21,5 +21,7 @@
 #import "UIColor+SLExtension.h"
 //曲线的协议<主要是X轴和Y轴显示的协议>
 #import "SLChartAxisValueFormatterPotocol.h"
+//选配的东西<曲线的基准线>
+#import "ChartBaseLine.h"
 
 #endif /* SLCurveChartLib_h */

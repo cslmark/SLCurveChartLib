@@ -133,6 +133,22 @@
     [self.myView setVisibleXRangeMinimum:@(2)];
     [self.myView setVisibleXRangeDefaultmum:@(10)];
     
+    //增加选配的基准线
+    ChartBaseLine* lineMax = [[ChartBaseLine alloc] init];
+    lineMax.lineWidth = 0.5;
+    lineMax.lineColor = [UIColor yellowColor];
+    lineMax.lineMode = ChartBaseLineDashMode;
+    lineMax.yValue = 90;
+    
+    ChartBaseLine* lineMin = [[ChartBaseLine alloc] init];
+    lineMin.lineWidth = 0.5;
+    lineMin.lineColor = [UIColor purpleColor];
+    lineMin.lineMode = ChartBaseLineStraightMode;
+    lineMin.yValue = 30;
+    [self.myView addYBaseLineWith:lineMax];
+    [self.myView addYBaseLineWith:lineMin];
+    [self.myView setPageScrollerEnable:@(NO)];
+    
     //直接调用Set方法和refreashDataSourceRestoreContext 和该方法等效
     [self.myView refreashDataSourceRestoreContext:_dataSource];
 }

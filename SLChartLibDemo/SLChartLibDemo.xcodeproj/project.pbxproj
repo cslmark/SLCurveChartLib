@@ -28,6 +28,7 @@
 		2A7088C31EF1221000CAC9FE /* YAxisFormtter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7088BF1EF1221000CAC9FE /* YAxisFormtter.m */; };
 		2A7088C41EF1221000CAC9FE /* YRightAxisFormtter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7088C11EF1221000CAC9FE /* YRightAxisFormtter.m */; };
 		2A7088CA1EF1275400CAC9FE /* statistics_data_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A7088C91EF1275400CAC9FE /* statistics_data_bg.png */; };
+		2A9B43321F1348F400A8B118 /* ChartBaseLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9B43311F1348F400A8B118 /* ChartBaseLine.m */; };
 		2ABCABDE1F090D91001CB20F /* SLAccelerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ABCABDD1F090D91001CB20F /* SLAccelerator.m */; };
 		2AF19D8D1EF261C7005C4BDE /* HighLightFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF19D8C1EF261C7005C4BDE /* HighLightFormatter.m */; };
 /* End PBXBuildFile section */
@@ -76,6 +77,8 @@
 		2A7088C01EF1221000CAC9FE /* YRightAxisFormtter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRightAxisFormtter.h; sourceTree = "<group>"; };
 		2A7088C11EF1221000CAC9FE /* YRightAxisFormtter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YRightAxisFormtter.m; sourceTree = "<group>"; };
 		2A7088C91EF1275400CAC9FE /* statistics_data_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statistics_data_bg.png; sourceTree = "<group>"; };
+		2A9B43301F1348F400A8B118 /* ChartBaseLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartBaseLine.h; sourceTree = "<group>"; };
+		2A9B43311F1348F400A8B118 /* ChartBaseLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartBaseLine.m; sourceTree = "<group>"; };
 		2ABCABDC1F090D91001CB20F /* SLAccelerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLAccelerator.h; sourceTree = "<group>"; };
 		2ABCABDD1F090D91001CB20F /* SLAccelerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLAccelerator.m; sourceTree = "<group>"; };
 		2AF19D8B1EF261C7005C4BDE /* HighLightFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighLightFormatter.h; sourceTree = "<group>"; };
@@ -185,6 +188,8 @@
 				2A70889A1EF11D3800CAC9FE /* ChartComponentBase.m */,
 				2A70889B1EF11D3800CAC9FE /* ChartHighlight.h */,
 				2A70889C1EF11D3800CAC9FE /* ChartHighlight.m */,
+				2A9B43301F1348F400A8B118 /* ChartBaseLine.h */,
+				2A9B43311F1348F400A8B118 /* ChartBaseLine.m */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -342,6 +347,7 @@
 				2A7088BA1EF11E9400CAC9FE /* SLGCDTimerTool.m in Sources */,
 				2A7088C41EF1221000CAC9FE /* YRightAxisFormtter.m in Sources */,
 				2A70887A1EF11ABB00CAC9FE /* main.m in Sources */,
+				2A9B43321F1348F400A8B118 /* ChartBaseLine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

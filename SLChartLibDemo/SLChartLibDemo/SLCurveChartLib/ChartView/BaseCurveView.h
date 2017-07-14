@@ -11,6 +11,7 @@
 #import "SLLineChartData.h"
 #import "ChartAxisBase.h"
 #import "ChartHighlight.h"
+#import "ChartBaseLine.h"
 
 #define   KScreen_W    [[UIScreen mainScreen] bounds].size.width
 #define   KScreen_H    [[UIScreen mainScreen] bounds].size.height
@@ -33,6 +34,7 @@
 @property (nonatomic, strong) NSNumber* visibleXRangeDefaultmum;
 @property (nonatomic, strong) NSNumber* hightLightTap;
 @property (nonatomic, strong) NSNumber* baseYValueFromZero;
+@property (nonatomic, strong) NSNumber* pageScrollerEnable;
 //X轴和Y坐标轴
 @property (nonatomic, strong) ChartAxisBase* XAxis;
 @property (nonatomic, strong) ChartAxisBase* leftYAxis;
@@ -51,4 +53,8 @@
  */
 -(void) refreashDataSource:(SLLineChartData*) datasource;
 -(void) refreashGraph;
+
+//增加绘制基准线的方法
+-(void) addYBaseLineWith:(ChartBaseLine *) baseLine;
+-(void) removeYBaseLineWith:(ChartBaseLine *) baseLine;
 @end

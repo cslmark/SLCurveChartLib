@@ -156,7 +156,7 @@
 -(NSMutableArray*) tempArray0{
     if (_tempArray0 == nil) {
         _tempArray0 = [NSMutableArray arrayWithCapacity:1];
-        for (int i = 0; i < 4000; i++) {
+        for (int i = 0; i < 4; i++) {
             int temp = arc4random()%100 + 1;
             if (i < 20) {
                 temp = arc4random()%50 + 1;
@@ -171,7 +171,7 @@
 -(NSMutableArray*) tempArray1{
     if (_tempArray1 == nil) {
         _tempArray1 = [NSMutableArray arrayWithCapacity:1];
-        for (int i = 0; i < 4000; i++) {
+        for (int i = 0; i < 4; i++) {
             int temp = arc4random()%100 + 1;
             if (i < 20) {
                 temp = arc4random()%50 + 1;

@@ -12,6 +12,7 @@
 #import "YAxisFormtter.h"
 #import "YRightAxisFormtter.h"
 #import "HighLightFormatter.h"
+#import "PinkView.h"
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet BaseCurveView *myView;
@@ -27,6 +28,8 @@
 - (IBAction)hiddenRightAxisClick:(UIButton *)sender;
 - (IBAction)hiddenXAxisClick:(UIButton *)sender;
 - (IBAction) curveOrStrightClick:(UIButton *)sender;
+
+@property (weak, nonatomic) IBOutlet PinkView *pinkView;
 @end
 
 @implementation ViewController
@@ -34,16 +37,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    CAGradientLayer* gradientLayer  = [CAGradientLayer layer];
-    gradientLayer.frame = self.view.bounds;
-    gradientLayer.startPoint = CGPointMake(0, 0);
-    gradientLayer.endPoint = CGPointMake(0, 1);
+//    CAGradientLayer* gradientLayer  = [CAGradientLayer layer];
+//    gradientLayer.frame = self.view.bounds;
+//    gradientLayer.startPoint = CGPointMake(0, 0);
+//    gradientLayer.endPoint = CGPointMake(0, 1);
+//
+//    //设置颜色数组
+//    gradientLayer.colors = @[(__bridge id)[UIColor blueColor].CGColor,
+//                               (__bridge id)[UIColor greenColor].CGColor];
+//    [self.view.layer insertSublayer:gradientLayer atIndex:0];
     
-    //设置颜色数组
-    gradientLayer.colors = @[(__bridge id)[UIColor blueColor].CGColor,
-                               (__bridge id)[UIColor greenColor].CGColor];
-    [self.view.layer insertSublayer:gradientLayer atIndex:0];
-    
+    self.view.backgroundColor = [UIColor blackColor];
     
     ChartAxisBase* xAxis = self.myView.XAxis;
     xAxis.axisValueFormatter = [[XAxisFormtter alloc] init];
@@ -94,22 +98,24 @@
     dataSet.mode = curveLineMode;
     dataSet.color = [UIColor greenColor];
     dataSet.circleRadius = 5.0;
-    dataSet.circleHoleRadius = 3.0;
+    dataSet.circleHoleRadius = 4.0;
     dataSet.highlightColor = [UIColor colorWithRed:244/255.f green:117/255.f blue:117/255.f alpha:1.f];
     dataSet.drawCircleHoleEnabled = YES;
     dataSet.drawCirclesEnabled = YES;
     dataSet.drawCirclesEnabled = YES;
     dataSet.drawFilledEnabled = YES;
     dataSet.gradientColors = @[[UIColor greenColor], [UIColor clearColor]];
+    dataSet.circleColor = [UIColor whiteColor];
+    dataSet.circleHoleColor = [UIColor yellowColor];
     
     SLLineChartDataSet* dataSet2 = [[SLLineChartDataSet alloc] initWithValues:self.tempArray0 label:@"Default"];
     dataSet2.lineWidth = 1.0;
     dataSet2.mode = curveLineMode;
     dataSet2.color = [UIColor redColor];
     dataSet2.circleRadius = 5.0;
-    dataSet2.circleHoleRadius = 3.0;
+    dataSet2.circleHoleRadius = 4.0;
     dataSet2.highlightColor = [UIColor colorWithRed:244/255.f green:117/255.f blue:117/255.f alpha:1.f];
-    dataSet2.drawCircleHoleEnabled = YES;
+    dataSet2.drawCircleHoleEnabled = NO;
     dataSet2.drawCirclesEnabled = YES;
     dataSet2.drawCirclesEnabled = YES;
     dataSet2.drawFilledEnabled = YES;

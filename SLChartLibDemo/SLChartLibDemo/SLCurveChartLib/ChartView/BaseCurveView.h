@@ -57,4 +57,8 @@
 //增加绘制基准线的方法
 -(void) addYBaseLineWith:(ChartBaseLine *) baseLine;
 -(void) removeYBaseLineWith:(ChartBaseLine *) baseLine;
+
+void drawArc(CGContextRef ctx, CGFloat x, CGFloat y, CGFloat r);
+void drawCircleRing(CGContextRef ctx, CGPoint center, CGFloat outRadius, CGFloat inRadius);
+
 @end

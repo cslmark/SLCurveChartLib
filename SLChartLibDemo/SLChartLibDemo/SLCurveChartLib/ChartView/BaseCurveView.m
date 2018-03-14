@@ -646,7 +646,7 @@
                 ChartDataEntry* data = [dataSet entryForIndex:(int)index];
                 CGFloat pointX = leftYAxisW + drawFromX + (index-drawFromIndex) * xstep;
                 CGFloat pointY = myH - ((data.y - minY) * ypixunit)- ybottom;
-                drawArc(pointX, pointY, dataSet.circleRadius);
+                drawArc(ctx ,pointX, pointY, dataSet.circleRadius);
             }
         }else{
             for (NSInteger index = drawFromIndex; index < (drawToIndex+1); index++) {
@@ -656,13 +656,16 @@
                 CGPoint center = CGPointMake(pointX, pointY);
                 [[dataSet circleColor] set];
                 drawCircleRing(ctx, center, dataSet.circleRadius, dataSet.circleHoleRadius);
+                NSLog(@"当前中点的位置为:%@", NSStringFromCGPoint(center));
                 BOOL clearColor = CGColorEqualToColor([dataSet circleHoleColor].CGColor, [UIColor clearColor].CGColor);
                 if (clearColor) {
                     [[self.datasource graphColor] set];
                 }else{
                     [[dataSet circleHoleColor] set];
                 }
-                drawArc(pointX, pointY, dataSet.circleHoleRadius);
+//                drawArc(center.x, center.y, dataSet.circleHoleRadius);
+                drawArc(ctx, center.x, center.y, dataSet.circleHoleRadius);
+                NSLog(@"当前中点的位置为:%@", NSStringFromCGPoint(center));
             }
         }
     }
@@ -926,18 +929,22 @@
     return attrs;
 }
 
-void drawArc(int x, int y, int r)
+void drawArc(CGContextRef ctx, CGFloat x, CGFloat y, CGFloat r)
 {
-    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    CGContextSaveGState(ctx);
+//    CGContextRef ctx = UIGraphicsGetCurrentContext();
     CGContextAddArc(ctx, x, y, r, 0, 2*M_PI, 0);
     CGContextFillPath(ctx);
+    CGContextRestoreGState(ctx);
 }
 
 void drawCircleRing(CGContextRef ctx, CGPoint center, CGFloat outRadius, CGFloat inRadius){
+    CGContextSaveGState(ctx);
     CGFloat ringWidth = outRadius - inRadius;
     CGContextSetLineWidth(ctx, ringWidth);
     CGContextAddArc(ctx, center.x, center.y, outRadius-ringWidth/2, 0, 2*M_PI, 0);
     CGContextStrokePath(ctx);
+    CGContextRestoreGState(ctx);
 }
 
 

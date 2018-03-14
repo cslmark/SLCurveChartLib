@@ -785,7 +785,6 @@
 
 -(void) panGes:(UIPanGestureRecognizer *) panGes{
 //    NSLog(@"panGes = jdlsjalfjlsdajlfjas");
-    
     if(panGes.state == UIGestureRecognizerStateBegan){
         CGPoint velocity = [panGes velocityInView:panGes.view];
         CGPoint translation = [panGes translationInView:self];
@@ -802,11 +801,11 @@
         }
         fromX -= distance;
         //限制条件
+        if (fromX > ((([self.datasource entryCount]-1)*xstep +  xleft + xright) - graphW)) {
+            fromX = (([self.datasource entryCount]-1)*xstep +   xleft + xright) - graphW;
+        }
         if (fromX < 0) {
             fromX = 0;
-        }
-        if (fromX > (([self.datasource entryCount]*xstep +  xleft + xright) - graphW)) {
-            fromX = ([self.datasource entryCount]*xstep +   xleft + xright) - graphW;
         }
         [self starRefreashTimer];
         //[self setNeedsDisplay];
@@ -825,22 +824,22 @@
                 __strong typeof(self) strongSelf = weakSelf;
                 fromX -= moveDistance;
                 //限制条件
+                if (fromX > ((([self.datasource entryCount]-1)*xstep + xleft + xright) - graphW)) {
+                    fromX = (([self.datasource entryCount]-1)*xstep + xleft  + xright) - graphW;
+                }
                 if (fromX < 0) {
                     fromX = 0;
-                }
-                if (fromX > (([self.datasource entryCount]*xstep + xleft + xright) - graphW)) {
-                    fromX = ([self.datasource entryCount]*xstep + xleft  + xright) - graphW;
                 }
                 [strongSelf setNeedsDisplay];
             }];
         }
         fromX -= distance;
         //限制条件
+        if (fromX > ((([self.datasource entryCount]-1)*xstep + xleft + xright) - graphW)) {
+            fromX = (([self.datasource entryCount]-1)*xstep + xleft  + xright) - graphW;
+        }
         if (fromX < 0) {
             fromX = 0;
-        }
-        if (fromX > (([self.datasource entryCount]*xstep + xleft + xright) - graphW)) {
-            fromX = ([self.datasource entryCount]*xstep + xleft  + xright) - graphW;
         }
         [self cancelRefreashTimer];
         [self setNeedsDisplay];
@@ -849,6 +848,8 @@
         //而不是距离第一个点的距离
         [panGes setTranslation:CGPointZero inView:self];
     }
+    
+    NSLog(@"fromX = %lf", fromX);
 }
 
 - (void)pinchGes:(UIPinchGestureRecognizer *)ges

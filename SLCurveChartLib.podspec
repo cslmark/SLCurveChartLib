@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "SLCurveChartLib"
-  s.version      = "1.0.2"
+  s.version      = "1.1.0"
   s.summary      = "Offer a easy to built a statisticsView For iOS"
   s.description  = <<-DESC
   It is a marquee view used on iOS, which implement by Objective-C.

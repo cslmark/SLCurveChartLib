@@ -2,7 +2,7 @@
 A Easy Way to draw a curve chart for iOS!
 
 ## Cocoapod集成
->pod 'SLCurveChartLib', '~> 1.0.2'
+>pod 'SLCurveChartLib', '~> 1.1.0'
 
 ## 应网友要求
 1. 一张图上绘制多个曲线

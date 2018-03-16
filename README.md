@@ -47,10 +47,11 @@ A Easy Way to draw a curve chart for iOS!
 ![image](https://github.com/cslmark/SLCurveChartLib/blob/master/CurveShowPics/WX20170620-162326%402x.png
 )
 * 出现填充和渐变
-
+![image](https://github.com/cslmark/SLCurveChartLib/blob/master/CurveShowPics/ADBED1F1E7B3EDC0A4A14924698A8F15.png)
 ![image](https://github.com/cslmark/SLCurveChartLib/blob/master/CurveShowPics/WX20170623-101032.png)
 * 改变背景色如此简单，发现暗黑主题也挺帅的 mulcurDev分支上，注意该截图中的内部小圆和外部小圆不同心，该问题在最新的mulcurDeV分支上该问题已经解决。
 ![image](https://github.com/cslmark/SLCurveChartLib/blob/master/CurveShowPics/WX20170627-102328%402x.png)
+1.1.0 更新版本的新的效果图展示
 
 ## 使用说明
 Lib文件夹如下：

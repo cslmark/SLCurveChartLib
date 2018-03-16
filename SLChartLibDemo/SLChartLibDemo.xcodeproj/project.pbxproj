@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A2FA2011EF8CA8300EA1B4A /* SLLineChartData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2FA2001EF8CA8300EA1B4A /* SLLineChartData.m */; };
 		2A70887A1EF11ABB00CAC9FE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7088791EF11ABB00CAC9FE /* main.m */; };
 		2A70887D1EF11ABB00CAC9FE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A70887C1EF11ABB00CAC9FE /* AppDelegate.m */; };
 		2A7088801EF11ABB00CAC9FE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A70887F1EF11ABB00CAC9FE /* ViewController.m */; };
@@ -27,10 +28,15 @@
 		2A7088C31EF1221000CAC9FE /* YAxisFormtter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7088BF1EF1221000CAC9FE /* YAxisFormtter.m */; };
 		2A7088C41EF1221000CAC9FE /* YRightAxisFormtter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7088C11EF1221000CAC9FE /* YRightAxisFormtter.m */; };
 		2A7088CA1EF1275400CAC9FE /* statistics_data_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A7088C91EF1275400CAC9FE /* statistics_data_bg.png */; };
+		2A9B43321F1348F400A8B118 /* ChartBaseLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9B43311F1348F400A8B118 /* ChartBaseLine.m */; };
+		2ABCABDE1F090D91001CB20F /* SLAccelerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ABCABDD1F090D91001CB20F /* SLAccelerator.m */; };
 		2AF19D8D1EF261C7005C4BDE /* HighLightFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF19D8C1EF261C7005C4BDE /* HighLightFormatter.m */; };
+		6BE33E3F2057EB7900DC0B6E /* PinkView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE33E3E2057EB7900DC0B6E /* PinkView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A2FA1FF1EF8CA8300EA1B4A /* SLLineChartData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLLineChartData.h; sourceTree = "<group>"; };
+		2A2FA2001EF8CA8300EA1B4A /* SLLineChartData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLLineChartData.m; sourceTree = "<group>"; };
 		2A7088751EF11ABB00CAC9FE /* SLChartLibDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SLChartLibDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A7088791EF11ABB00CAC9FE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2A70887B1EF11ABB00CAC9FE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -72,8 +78,14 @@
 		2A7088C01EF1221000CAC9FE /* YRightAxisFormtter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRightAxisFormtter.h; sourceTree = "<group>"; };
 		2A7088C11EF1221000CAC9FE /* YRightAxisFormtter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YRightAxisFormtter.m; sourceTree = "<group>"; };
 		2A7088C91EF1275400CAC9FE /* statistics_data_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statistics_data_bg.png; sourceTree = "<group>"; };
+		2A9B43301F1348F400A8B118 /* ChartBaseLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartBaseLine.h; sourceTree = "<group>"; };
+		2A9B43311F1348F400A8B118 /* ChartBaseLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartBaseLine.m; sourceTree = "<group>"; };
+		2ABCABDC1F090D91001CB20F /* SLAccelerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLAccelerator.h; sourceTree = "<group>"; };
+		2ABCABDD1F090D91001CB20F /* SLAccelerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLAccelerator.m; sourceTree = "<group>"; };
 		2AF19D8B1EF261C7005C4BDE /* HighLightFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighLightFormatter.h; sourceTree = "<group>"; };
 		2AF19D8C1EF261C7005C4BDE /* HighLightFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighLightFormatter.m; sourceTree = "<group>"; };
+		6BE33E3D2057EB7900DC0B6E /* PinkView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PinkView.h; sourceTree = "<group>"; };
+		6BE33E3E2057EB7900DC0B6E /* PinkView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PinkView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +128,8 @@
 				2A7088861EF11ABB00CAC9FE /* LaunchScreen.storyboard */,
 				2A7088891EF11ABB00CAC9FE /* Info.plist */,
 				2A7088781EF11ABB00CAC9FE /* Supporting Files */,
+				6BE33E3D2057EB7900DC0B6E /* PinkView.h */,
+				6BE33E3E2057EB7900DC0B6E /* PinkView.m */,
 			);
 			path = SLChartLibDemo;
 			sourceTree = "<group>";
@@ -163,6 +177,7 @@
 		2A7088931EF11D3800CAC9FE /* ChartView */ = {
 			isa = PBXGroup;
 			children = (
+				2ABCABDB1F090D65001CB20F /* accelerator */,
 				2A7088941EF11D3800CAC9FE /* BaseCurveView.h */,
 				2A7088951EF11D3800CAC9FE /* BaseCurveView.m */,
 			);
@@ -178,6 +193,8 @@
 				2A70889A1EF11D3800CAC9FE /* ChartComponentBase.m */,
 				2A70889B1EF11D3800CAC9FE /* ChartHighlight.h */,
 				2A70889C1EF11D3800CAC9FE /* ChartHighlight.m */,
+				2A9B43301F1348F400A8B118 /* ChartBaseLine.h */,
+				2A9B43311F1348F400A8B118 /* ChartBaseLine.m */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -189,6 +206,8 @@
 				2A7088B21EF11E4300CAC9FE /* SLChartBaseDataSet.m */,
 				2A7088B31EF11E4300CAC9FE /* SLLineChartDataSet.h */,
 				2A7088B41EF11E4300CAC9FE /* SLLineChartDataSet.m */,
+				2A2FA1FF1EF8CA8300EA1B4A /* SLLineChartData.h */,
+				2A2FA2001EF8CA8300EA1B4A /* SLLineChartData.m */,
 				2A7088A01EF11D3800CAC9FE /* Standard */,
 			);
 			path = Data;
@@ -232,6 +251,15 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		2ABCABDB1F090D65001CB20F /* accelerator */ = {
+			isa = PBXGroup;
+			children = (
+				2ABCABDC1F090D91001CB20F /* SLAccelerator.h */,
+				2ABCABDD1F090D91001CB20F /* SLAccelerator.m */,
+			);
+			path = accelerator;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -263,7 +291,7 @@
 				TargetAttributes = {
 					2A7088741EF11ABB00CAC9FE = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 8UTC3S4RZK;
+						DevelopmentTeam = NHAGK7QKXG;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -308,6 +336,7 @@
 				2A7088AA1EF11D3800CAC9FE /* BaseCurveView.m in Sources */,
 				2A7088A91EF11D3800CAC9FE /* UIColor+SLExtension.m in Sources */,
 				2AF19D8D1EF261C7005C4BDE /* HighLightFormatter.m in Sources */,
+				2ABCABDE1F090D91001CB20F /* SLAccelerator.m in Sources */,
 				2A7088AF1EF11D3800CAC9FE /* ChartDataEntry.m in Sources */,
 				2A7088801EF11ABB00CAC9FE /* ViewController.m in Sources */,
 				2A7088B01EF11D3800CAC9FE /* ChartDataEntryBase.m in Sources */,
@@ -318,10 +347,13 @@
 				2A7088B51EF11E4300CAC9FE /* SLChartBaseDataSet.m in Sources */,
 				2A7088AD1EF11D3800CAC9FE /* ChartHighlight.m in Sources */,
 				2A7088AC1EF11D3800CAC9FE /* ChartComponentBase.m in Sources */,
+				2A2FA2011EF8CA8300EA1B4A /* SLLineChartData.m in Sources */,
 				2A7088B61EF11E4300CAC9FE /* SLLineChartDataSet.m in Sources */,
 				2A7088BA1EF11E9400CAC9FE /* SLGCDTimerTool.m in Sources */,
+				6BE33E3F2057EB7900DC0B6E /* PinkView.m in Sources */,
 				2A7088C41EF1221000CAC9FE /* YRightAxisFormtter.m in Sources */,
 				2A70887A1EF11ABB00CAC9FE /* main.m in Sources */,
+				2A9B43321F1348F400A8B118 /* ChartBaseLine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,13 +471,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 8UTC3S4RZK;
+				DEVELOPMENT_TEAM = NHAGK7QKXG;
 				INFOPLIST_FILE = SLChartLibDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hadlinks.SLDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xjyc.sldemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "65ea2f6c-abf5-4fbb-a094-b24c4d10af80";
+				PROVISIONING_PROFILE = "91900e41-beaf-4b93-93a5-1880ff76a29c";
 				PROVISIONING_PROFILE_SPECIFIER = SLDemo_Dev;
 			};
 			name = Debug;
@@ -458,7 +490,7 @@
 				INFOPLIST_FILE = SLChartLibDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hadlinks.SLDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xjyc.sldemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

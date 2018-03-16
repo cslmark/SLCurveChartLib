@@ -21,6 +21,12 @@ typedef enum : NSUInteger {
     curveLineMode = 1,
 } LineMode;
 
+//渐变色的填充样式
+typedef enum : NSUInteger {
+    gradientolorFillMode = 0,
+    SingleColorFillMode = 1,
+} LineFillMode;
+
 @interface SLLineChartDataSet : SLChartBaseDataSet
 {
     NSMutableArray<ChartDataEntry*>* _values;
@@ -42,6 +48,18 @@ typedef enum : NSUInteger {
 @property (nonatomic, strong) UIColor*  circleHoleColor;
 @property (nonatomic, strong) UIColor*  highlightColor;
 @property (nonatomic, strong) UIColor*  graphColor;
+
+//增加曲线的填充属性<根据网友的需求添加>
+//是否填充颜色
+@property (nonatomic, assign) BOOL      drawFilledEnabled;
+//填充的样式
+@property (nonatomic, assign) LineFillMode lineFillMode;
+//填充的颜色
+@property (nonatomic, strong) UIColor*  fillColor;
+//填充渐变的颜色数组
+@property (nonatomic, strong) NSArray*  gradientColors;
+
+
 
 //初始化方法
 -(instancetype) initWithValues:(NSMutableArray *) values label:(NSString *) label;

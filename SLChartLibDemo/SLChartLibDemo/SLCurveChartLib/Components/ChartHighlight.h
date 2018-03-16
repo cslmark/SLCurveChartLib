@@ -27,8 +27,10 @@
 @interface ChartHighlight : ChartComponentBase
 @property (nonatomic, assign) double x;                  //选定点的X数值
 @property (nonatomic, assign) double y;                  //选定点的Y数值
+@property (nonatomic, assign) double touchYValue;        //手势所在点的Y坐标数值
 @property (nonatomic, assign) CGFloat xPx;               //整体曲线图整图的X坐标
 @property (nonatomic, assign) CGFloat yPx;               //整体曲线图整图的Y坐标
+@property (nonatomic, assign) int     dataSetIndex;      //处于那条曲线上面的点击<用于区分多条曲线的情况>
 @property (nonatomic, assign) int     dataIndex;         //距离点击点最近的当前数据源下标
 @property (nonatomic, assign) CGFloat drawX;             //选定点处于当前屏幕X坐标
 @property (nonatomic, assign) CGFloat drawY;             //选定点处于当前屏幕Y坐标

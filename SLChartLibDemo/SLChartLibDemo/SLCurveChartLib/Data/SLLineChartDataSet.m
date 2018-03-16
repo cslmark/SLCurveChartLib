@@ -44,6 +44,12 @@
     self.circleHoleColor = [UIColor clearColor];
     self.highlightColor = [UIColor whiteColor];
     self.graphColor = [UIColor lightGrayColor];
+    
+    //默认的设置
+    self.drawFilledEnabled = NO;
+    self.lineFillMode = gradientolorFillMode;
+    self.gradientColors = @[[UIColor greenColor], [UIColor lightGrayColor]];
+    self.fillColor = [UIColor greenColor];
 }
 
 -(instancetype) initWithValues:(NSMutableArray *) values label:(NSString *) label{

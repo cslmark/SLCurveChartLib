@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -43,14 +44,14 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EmL-uj-kYw">
-                                <rect key="frame" x="293" y="154" width="67" height="30"/>
+                                <rect key="frame" x="294" y="154" width="66" height="30"/>
                                 <state key="normal" title="折线/曲线"/>
                                 <connections>
                                     <action selector="curveOrStrightClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j81-UD-6vr"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Haz-W8-APh">
-                                <rect key="frame" x="15" y="50" width="123" height="30"/>
+                                <rect key="frame" x="15" y="50" width="122" height="30"/>
                                 <state key="normal" title="开启/关闭X轴缩放"/>
                                 <connections>
                                     <action selector="enableXscaleClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k3Q-nA-for"/>
@@ -70,11 +71,18 @@
                                     <constraint firstAttribute="height" constant="300" id="gcf-hv-QeC"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hJh-wJ-0JA" customClass="PinkView">
+                                <rect key="frame" x="24" y="514" width="327" height="145"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="EmL-uj-kYw" firstAttribute="centerY" secondItem="jqg-Km-mjM" secondAttribute="centerY" id="0Zh-2o-Nti"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hJh-wJ-0JA" secondAttribute="bottom" constant="8" id="0iW-lW-6Zc"/>
+                            <constraint firstItem="hJh-wJ-0JA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="1KQ-hH-Sva"/>
                             <constraint firstItem="t9W-gd-hDH" firstAttribute="top" secondItem="EmL-uj-kYw" secondAttribute="bottom" constant="22" id="84H-bK-bw5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hJh-wJ-0JA" secondAttribute="trailing" constant="8" id="9U9-tg-kzW"/>
                             <constraint firstItem="EmL-uj-kYw" firstAttribute="trailing" secondItem="kpd-VN-REk" secondAttribute="trailing" id="Vcq-RD-vgr"/>
                             <constraint firstAttribute="trailing" secondItem="kpd-VN-REk" secondAttribute="trailing" constant="15" id="Y0M-ne-mSi"/>
                             <constraint firstItem="kpd-VN-REk" firstAttribute="centerY" secondItem="Haz-W8-APh" secondAttribute="centerY" id="YKS-54-0eb"/>
@@ -83,6 +91,7 @@
                             <constraint firstItem="kqV-kl-Cag" firstAttribute="centerY" secondItem="Sh5-yp-nyX" secondAttribute="centerY" id="d1S-KL-v2l"/>
                             <constraint firstItem="Sh5-yp-nyX" firstAttribute="leading" secondItem="Haz-W8-APh" secondAttribute="leading" id="gHu-OL-r27"/>
                             <constraint firstItem="jqg-Km-mjM" firstAttribute="top" secondItem="Sh5-yp-nyX" secondAttribute="bottom" constant="22" id="ieC-c0-Lxr"/>
+                            <constraint firstItem="hJh-wJ-0JA" firstAttribute="top" secondItem="t9W-gd-hDH" secondAttribute="bottom" constant="8" id="kSh-kD-mqK"/>
                             <constraint firstItem="Sh5-yp-nyX" firstAttribute="top" secondItem="Haz-W8-APh" secondAttribute="bottom" constant="22" id="kxN-Jj-ozs"/>
                             <constraint firstItem="kqV-kl-Cag" firstAttribute="trailing" secondItem="kpd-VN-REk" secondAttribute="trailing" id="lPA-7E-uZD"/>
                             <constraint firstItem="Haz-W8-APh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="lR5-YO-e0h"/>
@@ -92,6 +101,7 @@
                     </view>
                     <connections>
                         <outlet property="myView" destination="t9W-gd-hDH" id="U6q-gk-21S"/>
+                        <outlet property="pinkView" destination="hJh-wJ-0JA" id="eP0-M9-zYI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

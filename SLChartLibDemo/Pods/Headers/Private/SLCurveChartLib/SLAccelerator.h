@@ -1,0 +1,1 @@
+../../../../../SLCurveChartLib/ChartView/accelerator/SLAccelerator.h

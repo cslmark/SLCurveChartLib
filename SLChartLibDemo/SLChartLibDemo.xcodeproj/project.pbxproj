@@ -7,36 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A2FA2011EF8CA8300EA1B4A /* SLLineChartData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2FA2001EF8CA8300EA1B4A /* SLLineChartData.m */; };
 		2A70887A1EF11ABB00CAC9FE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7088791EF11ABB00CAC9FE /* main.m */; };
 		2A70887D1EF11ABB00CAC9FE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A70887C1EF11ABB00CAC9FE /* AppDelegate.m */; };
 		2A7088801EF11ABB00CAC9FE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A70887F1EF11ABB00CAC9FE /* ViewController.m */; };
 		2A7088831EF11ABB00CAC9FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A7088811EF11ABB00CAC9FE /* Main.storyboard */; };
 		2A7088851EF11ABB00CAC9FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A7088841EF11ABB00CAC9FE /* Assets.xcassets */; };
 		2A7088881EF11ABB00CAC9FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A7088861EF11ABB00CAC9FE /* LaunchScreen.storyboard */; };
-		2A7088A91EF11D3800CAC9FE /* UIColor+SLExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7088921EF11D3800CAC9FE /* UIColor+SLExtension.m */; };
-		2A7088AA1EF11D3800CAC9FE /* BaseCurveView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7088951EF11D3800CAC9FE /* BaseCurveView.m */; };
-		2A7088AB1EF11D3800CAC9FE /* ChartAxisBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7088981EF11D3800CAC9FE /* ChartAxisBase.m */; };
-		2A7088AC1EF11D3800CAC9FE /* ChartComponentBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A70889A1EF11D3800CAC9FE /* ChartComponentBase.m */; };
-		2A7088AD1EF11D3800CAC9FE /* ChartHighlight.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A70889C1EF11D3800CAC9FE /* ChartHighlight.m */; };
-		2A7088AF1EF11D3800CAC9FE /* ChartDataEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7088A21EF11D3800CAC9FE /* ChartDataEntry.m */; };
-		2A7088B01EF11D3800CAC9FE /* ChartDataEntryBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7088A41EF11D3800CAC9FE /* ChartDataEntryBase.m */; };
-		2A7088B51EF11E4300CAC9FE /* SLChartBaseDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7088B21EF11E4300CAC9FE /* SLChartBaseDataSet.m */; };
-		2A7088B61EF11E4300CAC9FE /* SLLineChartDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7088B41EF11E4300CAC9FE /* SLLineChartDataSet.m */; };
-		2A7088BA1EF11E9400CAC9FE /* SLGCDTimerTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7088B91EF11E9400CAC9FE /* SLGCDTimerTool.m */; };
 		2A7088C21EF1221000CAC9FE /* XAxisFormtter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7088BD1EF1221000CAC9FE /* XAxisFormtter.m */; };
 		2A7088C31EF1221000CAC9FE /* YAxisFormtter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7088BF1EF1221000CAC9FE /* YAxisFormtter.m */; };
 		2A7088C41EF1221000CAC9FE /* YRightAxisFormtter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7088C11EF1221000CAC9FE /* YRightAxisFormtter.m */; };
-		2A7088CA1EF1275400CAC9FE /* statistics_data_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A7088C91EF1275400CAC9FE /* statistics_data_bg.png */; };
-		2A9B43321F1348F400A8B118 /* ChartBaseLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9B43311F1348F400A8B118 /* ChartBaseLine.m */; };
-		2ABCABDE1F090D91001CB20F /* SLAccelerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ABCABDD1F090D91001CB20F /* SLAccelerator.m */; };
 		2AF19D8D1EF261C7005C4BDE /* HighLightFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF19D8C1EF261C7005C4BDE /* HighLightFormatter.m */; };
+		596B2982E3AD435C3988F590 /* libPods-SLChartLibDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8B1E5DFB993D71467DF9D75 /* libPods-SLChartLibDemo.a */; };
 		6BE33E3F2057EB7900DC0B6E /* PinkView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE33E3E2057EB7900DC0B6E /* PinkView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2A2FA1FF1EF8CA8300EA1B4A /* SLLineChartData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLLineChartData.h; sourceTree = "<group>"; };
-		2A2FA2001EF8CA8300EA1B4A /* SLLineChartData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLLineChartData.m; sourceTree = "<group>"; };
 		2A7088751EF11ABB00CAC9FE /* SLChartLibDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SLChartLibDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A7088791EF11ABB00CAC9FE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2A70887B1EF11ABB00CAC9FE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -47,45 +32,19 @@
 		2A7088841EF11ABB00CAC9FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A7088871EF11ABB00CAC9FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2A7088891EF11ABB00CAC9FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2A7088911EF11D3800CAC9FE /* UIColor+SLExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+SLExtension.h"; sourceTree = "<group>"; };
-		2A7088921EF11D3800CAC9FE /* UIColor+SLExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SLExtension.m"; sourceTree = "<group>"; };
-		2A7088941EF11D3800CAC9FE /* BaseCurveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCurveView.h; sourceTree = "<group>"; };
-		2A7088951EF11D3800CAC9FE /* BaseCurveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCurveView.m; sourceTree = "<group>"; };
-		2A7088971EF11D3800CAC9FE /* ChartAxisBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartAxisBase.h; sourceTree = "<group>"; };
-		2A7088981EF11D3800CAC9FE /* ChartAxisBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartAxisBase.m; sourceTree = "<group>"; };
-		2A7088991EF11D3800CAC9FE /* ChartComponentBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartComponentBase.h; sourceTree = "<group>"; };
-		2A70889A1EF11D3800CAC9FE /* ChartComponentBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartComponentBase.m; sourceTree = "<group>"; };
-		2A70889B1EF11D3800CAC9FE /* ChartHighlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartHighlight.h; sourceTree = "<group>"; };
-		2A70889C1EF11D3800CAC9FE /* ChartHighlight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartHighlight.m; sourceTree = "<group>"; };
-		2A7088A11EF11D3800CAC9FE /* ChartDataEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartDataEntry.h; sourceTree = "<group>"; };
-		2A7088A21EF11D3800CAC9FE /* ChartDataEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartDataEntry.m; sourceTree = "<group>"; };
-		2A7088A31EF11D3800CAC9FE /* ChartDataEntryBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartDataEntryBase.h; sourceTree = "<group>"; };
-		2A7088A41EF11D3800CAC9FE /* ChartDataEntryBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartDataEntryBase.m; sourceTree = "<group>"; };
-		2A7088A61EF11D3800CAC9FE /* SLChartAxisValueFormatterPotocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLChartAxisValueFormatterPotocol.h; sourceTree = "<group>"; };
-		2A7088A71EF11D3800CAC9FE /* SLChartDataProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLChartDataProtocol.h; sourceTree = "<group>"; };
-		2A7088A81EF11D3800CAC9FE /* SLChartFormatterProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLChartFormatterProtocol.h; sourceTree = "<group>"; };
-		2A7088B11EF11E4300CAC9FE /* SLChartBaseDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLChartBaseDataSet.h; sourceTree = "<group>"; };
-		2A7088B21EF11E4300CAC9FE /* SLChartBaseDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLChartBaseDataSet.m; sourceTree = "<group>"; };
-		2A7088B31EF11E4300CAC9FE /* SLLineChartDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLLineChartDataSet.h; sourceTree = "<group>"; };
-		2A7088B41EF11E4300CAC9FE /* SLLineChartDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLLineChartDataSet.m; sourceTree = "<group>"; };
-		2A7088B81EF11E9400CAC9FE /* SLGCDTimerTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLGCDTimerTool.h; sourceTree = "<group>"; };
-		2A7088B91EF11E9400CAC9FE /* SLGCDTimerTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLGCDTimerTool.m; sourceTree = "<group>"; };
-		2A7088BB1EF1207400CAC9FE /* SLCurveChartLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLCurveChartLib.h; sourceTree = "<group>"; };
 		2A7088BC1EF1221000CAC9FE /* XAxisFormtter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XAxisFormtter.h; sourceTree = "<group>"; };
 		2A7088BD1EF1221000CAC9FE /* XAxisFormtter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XAxisFormtter.m; sourceTree = "<group>"; };
 		2A7088BE1EF1221000CAC9FE /* YAxisFormtter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAxisFormtter.h; sourceTree = "<group>"; };
 		2A7088BF1EF1221000CAC9FE /* YAxisFormtter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAxisFormtter.m; sourceTree = "<group>"; };
 		2A7088C01EF1221000CAC9FE /* YRightAxisFormtter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRightAxisFormtter.h; sourceTree = "<group>"; };
 		2A7088C11EF1221000CAC9FE /* YRightAxisFormtter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YRightAxisFormtter.m; sourceTree = "<group>"; };
-		2A7088C91EF1275400CAC9FE /* statistics_data_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statistics_data_bg.png; sourceTree = "<group>"; };
-		2A9B43301F1348F400A8B118 /* ChartBaseLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartBaseLine.h; sourceTree = "<group>"; };
-		2A9B43311F1348F400A8B118 /* ChartBaseLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartBaseLine.m; sourceTree = "<group>"; };
-		2ABCABDC1F090D91001CB20F /* SLAccelerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLAccelerator.h; sourceTree = "<group>"; };
-		2ABCABDD1F090D91001CB20F /* SLAccelerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLAccelerator.m; sourceTree = "<group>"; };
 		2AF19D8B1EF261C7005C4BDE /* HighLightFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighLightFormatter.h; sourceTree = "<group>"; };
 		2AF19D8C1EF261C7005C4BDE /* HighLightFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighLightFormatter.m; sourceTree = "<group>"; };
+		66ECD52BB0AAE38A68F42403 /* Pods-SLChartLibDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SLChartLibDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SLChartLibDemo/Pods-SLChartLibDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		6BE33E3D2057EB7900DC0B6E /* PinkView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PinkView.h; sourceTree = "<group>"; };
 		6BE33E3E2057EB7900DC0B6E /* PinkView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PinkView.m; sourceTree = "<group>"; };
+		6C8CD13F6306C716A3D7FA45 /* Pods-SLChartLibDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SLChartLibDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SLChartLibDemo/Pods-SLChartLibDemo.release.xcconfig"; sourceTree = "<group>"; };
+		C8B1E5DFB993D71467DF9D75 /* libPods-SLChartLibDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SLChartLibDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				596B2982E3AD435C3988F590 /* libPods-SLChartLibDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +64,8 @@
 			children = (
 				2A7088771EF11ABB00CAC9FE /* SLChartLibDemo */,
 				2A7088761EF11ABB00CAC9FE /* Products */,
+				67101C2CA2079417AC7F4C8F /* Pods */,
+				A8A864A830FEAB27A522656A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -118,7 +80,6 @@
 		2A7088771EF11ABB00CAC9FE /* SLChartLibDemo */ = {
 			isa = PBXGroup;
 			children = (
-				2A70888F1EF11D3800CAC9FE /* SLCurveChartLib */,
 				2A70887B1EF11ABB00CAC9FE /* AppDelegate.h */,
 				2A70887C1EF11ABB00CAC9FE /* AppDelegate.m */,
 				2A70887E1EF11ABB00CAC9FE /* ViewController.h */,
@@ -150,114 +111,21 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		2A70888F1EF11D3800CAC9FE /* SLCurveChartLib */ = {
+		67101C2CA2079417AC7F4C8F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2A7088BB1EF1207400CAC9FE /* SLCurveChartLib.h */,
-				2A7088B71EF11E9400CAC9FE /* UtilTool */,
-				2A7088901EF11D3800CAC9FE /* Category */,
-				2A7088931EF11D3800CAC9FE /* ChartView */,
-				2A7088961EF11D3800CAC9FE /* Components */,
-				2A70889D1EF11D3800CAC9FE /* Data */,
-				2A7088A51EF11D3800CAC9FE /* Interface */,
-				2A7088C81EF1275400CAC9FE /* Resource */,
+				66ECD52BB0AAE38A68F42403 /* Pods-SLChartLibDemo.debug.xcconfig */,
+				6C8CD13F6306C716A3D7FA45 /* Pods-SLChartLibDemo.release.xcconfig */,
 			);
-			path = SLCurveChartLib;
+			name = Pods;
 			sourceTree = "<group>";
 		};
-		2A7088901EF11D3800CAC9FE /* Category */ = {
+		A8A864A830FEAB27A522656A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2A7088911EF11D3800CAC9FE /* UIColor+SLExtension.h */,
-				2A7088921EF11D3800CAC9FE /* UIColor+SLExtension.m */,
+				C8B1E5DFB993D71467DF9D75 /* libPods-SLChartLibDemo.a */,
 			);
-			path = Category;
-			sourceTree = "<group>";
-		};
-		2A7088931EF11D3800CAC9FE /* ChartView */ = {
-			isa = PBXGroup;
-			children = (
-				2ABCABDB1F090D65001CB20F /* accelerator */,
-				2A7088941EF11D3800CAC9FE /* BaseCurveView.h */,
-				2A7088951EF11D3800CAC9FE /* BaseCurveView.m */,
-			);
-			path = ChartView;
-			sourceTree = "<group>";
-		};
-		2A7088961EF11D3800CAC9FE /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				2A7088971EF11D3800CAC9FE /* ChartAxisBase.h */,
-				2A7088981EF11D3800CAC9FE /* ChartAxisBase.m */,
-				2A7088991EF11D3800CAC9FE /* ChartComponentBase.h */,
-				2A70889A1EF11D3800CAC9FE /* ChartComponentBase.m */,
-				2A70889B1EF11D3800CAC9FE /* ChartHighlight.h */,
-				2A70889C1EF11D3800CAC9FE /* ChartHighlight.m */,
-				2A9B43301F1348F400A8B118 /* ChartBaseLine.h */,
-				2A9B43311F1348F400A8B118 /* ChartBaseLine.m */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
-		2A70889D1EF11D3800CAC9FE /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				2A7088B11EF11E4300CAC9FE /* SLChartBaseDataSet.h */,
-				2A7088B21EF11E4300CAC9FE /* SLChartBaseDataSet.m */,
-				2A7088B31EF11E4300CAC9FE /* SLLineChartDataSet.h */,
-				2A7088B41EF11E4300CAC9FE /* SLLineChartDataSet.m */,
-				2A2FA1FF1EF8CA8300EA1B4A /* SLLineChartData.h */,
-				2A2FA2001EF8CA8300EA1B4A /* SLLineChartData.m */,
-				2A7088A01EF11D3800CAC9FE /* Standard */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
-		2A7088A01EF11D3800CAC9FE /* Standard */ = {
-			isa = PBXGroup;
-			children = (
-				2A7088A11EF11D3800CAC9FE /* ChartDataEntry.h */,
-				2A7088A21EF11D3800CAC9FE /* ChartDataEntry.m */,
-				2A7088A31EF11D3800CAC9FE /* ChartDataEntryBase.h */,
-				2A7088A41EF11D3800CAC9FE /* ChartDataEntryBase.m */,
-			);
-			path = Standard;
-			sourceTree = "<group>";
-		};
-		2A7088A51EF11D3800CAC9FE /* Interface */ = {
-			isa = PBXGroup;
-			children = (
-				2A7088A61EF11D3800CAC9FE /* SLChartAxisValueFormatterPotocol.h */,
-				2A7088A71EF11D3800CAC9FE /* SLChartDataProtocol.h */,
-				2A7088A81EF11D3800CAC9FE /* SLChartFormatterProtocol.h */,
-			);
-			path = Interface;
-			sourceTree = "<group>";
-		};
-		2A7088B71EF11E9400CAC9FE /* UtilTool */ = {
-			isa = PBXGroup;
-			children = (
-				2A7088B81EF11E9400CAC9FE /* SLGCDTimerTool.h */,
-				2A7088B91EF11E9400CAC9FE /* SLGCDTimerTool.m */,
-			);
-			path = UtilTool;
-			sourceTree = "<group>";
-		};
-		2A7088C81EF1275400CAC9FE /* Resource */ = {
-			isa = PBXGroup;
-			children = (
-				2A7088C91EF1275400CAC9FE /* statistics_data_bg.png */,
-			);
-			path = Resource;
-			sourceTree = "<group>";
-		};
-		2ABCABDB1F090D65001CB20F /* accelerator */ = {
-			isa = PBXGroup;
-			children = (
-				2ABCABDC1F090D91001CB20F /* SLAccelerator.h */,
-				2ABCABDD1F090D91001CB20F /* SLAccelerator.m */,
-			);
-			path = accelerator;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,9 +135,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2A70888C1EF11ABB00CAC9FE /* Build configuration list for PBXNativeTarget "SLChartLibDemo" */;
 			buildPhases = (
+				8C3AE24AD2EA2B5F1EA9057A /* [CP] Check Pods Manifest.lock */,
 				2A7088711EF11ABB00CAC9FE /* Sources */,
 				2A7088721EF11ABB00CAC9FE /* Frameworks */,
 				2A7088731EF11ABB00CAC9FE /* Resources */,
+				7D821FF24D783E670F68CBC2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -291,8 +161,8 @@
 				TargetAttributes = {
 					2A7088741EF11ABB00CAC9FE = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = NHAGK7QKXG;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = N9C3BTD9LM;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -301,6 +171,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -320,7 +191,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A7088881EF11ABB00CAC9FE /* LaunchScreen.storyboard in Resources */,
-				2A7088CA1EF1275400CAC9FE /* statistics_data_bg.png in Resources */,
 				2A7088851EF11ABB00CAC9FE /* Assets.xcassets in Resources */,
 				2A7088831EF11ABB00CAC9FE /* Main.storyboard in Resources */,
 			);
@@ -328,32 +198,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7D821FF24D783E670F68CBC2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SLChartLibDemo/Pods-SLChartLibDemo-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/SLCurveChartLib/SLCurveChartLib.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SLCurveChartLib.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SLChartLibDemo/Pods-SLChartLibDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8C3AE24AD2EA2B5F1EA9057A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SLChartLibDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2A7088711EF11ABB00CAC9FE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A7088AA1EF11D3800CAC9FE /* BaseCurveView.m in Sources */,
-				2A7088A91EF11D3800CAC9FE /* UIColor+SLExtension.m in Sources */,
 				2AF19D8D1EF261C7005C4BDE /* HighLightFormatter.m in Sources */,
-				2ABCABDE1F090D91001CB20F /* SLAccelerator.m in Sources */,
-				2A7088AF1EF11D3800CAC9FE /* ChartDataEntry.m in Sources */,
 				2A7088801EF11ABB00CAC9FE /* ViewController.m in Sources */,
-				2A7088B01EF11D3800CAC9FE /* ChartDataEntryBase.m in Sources */,
 				2A7088C31EF1221000CAC9FE /* YAxisFormtter.m in Sources */,
 				2A70887D1EF11ABB00CAC9FE /* AppDelegate.m in Sources */,
 				2A7088C21EF1221000CAC9FE /* XAxisFormtter.m in Sources */,
-				2A7088AB1EF11D3800CAC9FE /* ChartAxisBase.m in Sources */,
-				2A7088B51EF11E4300CAC9FE /* SLChartBaseDataSet.m in Sources */,
-				2A7088AD1EF11D3800CAC9FE /* ChartHighlight.m in Sources */,
-				2A7088AC1EF11D3800CAC9FE /* ChartComponentBase.m in Sources */,
-				2A2FA2011EF8CA8300EA1B4A /* SLLineChartData.m in Sources */,
-				2A7088B61EF11E4300CAC9FE /* SLLineChartDataSet.m in Sources */,
-				2A7088BA1EF11E9400CAC9FE /* SLGCDTimerTool.m in Sources */,
 				6BE33E3F2057EB7900DC0B6E /* PinkView.m in Sources */,
 				2A7088C41EF1221000CAC9FE /* YRightAxisFormtter.m in Sources */,
 				2A70887A1EF11ABB00CAC9FE /* main.m in Sources */,
-				2A9B43321F1348F400A8B118 /* ChartBaseLine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,21 +373,24 @@
 		};
 		2A70888D1EF11ABB00CAC9FE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66ECD52BB0AAE38A68F42403 /* Pods-SLChartLibDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = NHAGK7QKXG;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N9C3BTD9LM;
 				INFOPLIST_FILE = SLChartLibDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.xjyc.sldemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.sldemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "91900e41-beaf-4b93-93a5-1880ff76a29c";
-				PROVISIONING_PROFILE_SPECIFIER = SLDemo_Dev;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
 		2A70888E1EF11ABB00CAC9FE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C8CD13F6306C716A3D7FA45 /* Pods-SLChartLibDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";

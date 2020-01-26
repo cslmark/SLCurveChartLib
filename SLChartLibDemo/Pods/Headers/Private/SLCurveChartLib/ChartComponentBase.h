@@ -1,0 +1,1 @@
+../../../../../SLCurveChartLib/Components/ChartComponentBase.h

@@ -1,0 +1,16 @@
+PODS:
+  - SLCurveChartLib (1.0.2)
+
+DEPENDENCIES:
+  - SLCurveChartLib (from `../`)
+
+EXTERNAL SOURCES:
+  SLCurveChartLib:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  SLCurveChartLib: 92aac6f910fef7faa443d1bd9b94b01a7ce4253a
+
+PODFILE CHECKSUM: 9b8309edede67432486a65513452ddd655a280c1
+
+COCOAPODS: 1.5.3

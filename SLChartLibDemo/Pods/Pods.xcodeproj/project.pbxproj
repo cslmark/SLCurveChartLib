@@ -1,0 +1,833 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		01F306FC3225DD89BD02FF8A37EEBB5C /* ChartDataEntryBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC263AB78A15098EC9E32FF733D97EB /* ChartDataEntryBase.m */; };
+		1B66813305755258C3654D78BF29BE08 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74E404AA6957590324067E330E0EC533 /* UIKit.framework */; };
+		2F7484A81F7FEBEB657C303CDCB71AE3 /* SLCurveChartLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FB5497B0BA244A1EA3F197762A7F1EB /* SLCurveChartLib.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		36AD4231FC4F9CC2A11FF55878CF358B /* SLChartAxisValueFormatterPotocol.h in Headers */ = {isa = PBXBuildFile; fileRef = FDA7B7294E608A8B689BEAED339D38F2 /* SLChartAxisValueFormatterPotocol.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		3F7A9111408F7C1E18641D8F042B6C86 /* SLChartBaseDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F6147CDA0A3E10650E5D8DDAE610B6B /* SLChartBaseDataSet.m */; };
+		433CED992F81220D73526FDEFBFB6196 /* SLAccelerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 533FA3D3DCCFC04BF6BCBB513A5D8207 /* SLAccelerator.m */; };
+		462B4902A6577D9A22D24E8C493BB6F1 /* ChartHighlight.h in Headers */ = {isa = PBXBuildFile; fileRef = A2A92C492BE94DD7A50CE73CA35870DC /* ChartHighlight.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		4730BF01BFDE4B513150C805842B07E3 /* ChartAxisBase.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A97AD8B9F964E4582E02A2F11D3403 /* ChartAxisBase.m */; };
+		47A7ECF1BC76F729D5277CE58D4E6B26 /* ChartDataEntryBase.h in Headers */ = {isa = PBXBuildFile; fileRef = C06DD5345517F3543F334D0DA2F6A154 /* ChartDataEntryBase.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		486CFB0B022B323BF74F502E93420BAC /* SLAccelerator.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C875C2B4F32947453D1AC662F589978 /* SLAccelerator.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		5A292A0EEA635F37F3E3D06E1CA06DA5 /* SLChartFormatterProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 06D690BFA9D39385E3BB3B1253EC18B2 /* SLChartFormatterProtocol.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		69FAD21BBBFDBDDEBDB4ED41675EB385 /* SLGCDTimerTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D76E24485A984B4FA2F21DFB2730C77 /* SLGCDTimerTool.m */; };
+		73B3706F2DBE9790FC4FDABC6D15C5B9 /* UIColor+SLExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 7785F2C7497E7C5992AAF2806459C454 /* UIColor+SLExtension.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		745B3AC0925F0A7D4380A62B74F41DE3 /* ChartDataEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 3480136CDF19F0392FE4EA2ADB680701 /* ChartDataEntry.m */; };
+		76FBB0FBF81122132CC8AED9A08FB9A3 /* SLLineChartData.m in Sources */ = {isa = PBXBuildFile; fileRef = 02D8000A0AD6D107245BF372FEBC4430 /* SLLineChartData.m */; };
+		789F2E8DB82D7F7E43708D6BDCA264BF /* SLLineChartData.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BA3D87E0C6857352DDDB3EB6C93D98B /* SLLineChartData.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		79CB923F36A747FEBC2227107F842C18 /* statistics_data_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 69ED4DD704320384561136788F30A124 /* statistics_data_bg.png */; };
+		7A856794FA016194F8490B2766B2610B /* SLCurveChartLib-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B63279ED2FC505098611EC7052C50D /* SLCurveChartLib-dummy.m */; };
+		7DA844B284A3C19D5BB96C8365F4055D /* ChartComponentBase.m in Sources */ = {isa = PBXBuildFile; fileRef = EE42024744FFBDFAC128797C45FE3779 /* ChartComponentBase.m */; };
+		8ABB85016960EC7B13BDEC66EF79AE63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EFB40531CB700ADF867FEEE78561E78 /* Foundation.framework */; };
+		8B0580C18580622C883427012105C37D /* ChartBaseLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F39596DDCF3138CB48717A636ABF714 /* ChartBaseLine.m */; };
+		92293943C0C3AAB5A5E29BAD64BDBEDC /* ChartComponentBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 8BCBD8F284533F29E179499B8AFA027F /* ChartComponentBase.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		976914BE3235E0F486562B00D9A21F32 /* ChartAxisBase.h in Headers */ = {isa = PBXBuildFile; fileRef = EE6AC6E8664DC7176F94FA517D96A1A8 /* ChartAxisBase.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A8FDF2A3AB6BB51E2B5F0BE0FB72C09C /* ChartBaseLine.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C3C46E298105791F011D477F2675A36 /* ChartBaseLine.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B5A1E9674446143BEE56EB3DABFFC92E /* UIColor+SLExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D068E63D2EBB077042B7E827730E4729 /* UIColor+SLExtension.m */; };
+		B6C8FB07FD140070635BC3454AAA64A4 /* SLChartDataProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = A34E23D00252E237A2441BAFEB03D5E2 /* SLChartDataProtocol.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		C2E6AF0B51DD13C94FD9D81BB010468A /* SLLineChartDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB888879E060034DA65579A335C3C26 /* SLLineChartDataSet.m */; };
+		C8EACFC65B05DF6980B2CE64A6366BB7 /* ChartHighlight.m in Sources */ = {isa = PBXBuildFile; fileRef = 5779525879E7D4E0250FD0796CF62F02 /* ChartHighlight.m */; };
+		CC1FB8F70D3D3CC82530ED69E5D3E892 /* BaseCurveView.h in Headers */ = {isa = PBXBuildFile; fileRef = 29F1F0B77FC5169E2B77217152D7B82A /* BaseCurveView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D27D233CEDE413D2A5513EAE42B37D20 /* SLGCDTimerTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 51204555278340A004576584EFF4759B /* SLGCDTimerTool.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		DCB78E8107797F0B11959F67906628C2 /* Pods-SLChartLibDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DA618405C58EC395EBB781ED3A8E4712 /* Pods-SLChartLibDemo-dummy.m */; };
+		E5DE5D3976FFB96008BF547A6573A95F /* SLChartBaseDataSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FA847AB38266C48A0162308D0E357D9 /* SLChartBaseDataSet.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		E7477D8DD42D2897495A22EC5B595D76 /* ChartDataEntry.h in Headers */ = {isa = PBXBuildFile; fileRef = 85745C252314DD36353A53207F8C0814 /* ChartDataEntry.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		FB0B695DF60E9B0A2233876781F31F7A /* BaseCurveView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A13358695E9948B0B1500B9791D5B7 /* BaseCurveView.m */; };
+		FBED7A33DFD0C010F6495B5BE55800EF /* SLLineChartDataSet.h in Headers */ = {isa = PBXBuildFile; fileRef = EDA42201072BA9B2A90FE3A3F082C2EE /* SLLineChartDataSet.h */; settings = {ATTRIBUTES = (Project, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0AA0A29B5386E7ECAC0DFCC6DC335B20 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 95F6E56178C8EDCF424515601AD899B7;
+			remoteInfo = SLCurveChartLib;
+		};
+		DAA573D94886B633904E8E553E2A295C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D1AF7E4344554C1A2D1133731CC11E2D;
+			remoteInfo = "SLCurveChartLib-SLCurveChartLib";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		02D8000A0AD6D107245BF372FEBC4430 /* SLLineChartData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SLLineChartData.m; sourceTree = "<group>"; };
+		069EF17DA7453C8E915BE0B3FF743388 /* SLCurveChartLib.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SLCurveChartLib.xcconfig; sourceTree = "<group>"; };
+		06D690BFA9D39385E3BB3B1253EC18B2 /* SLChartFormatterProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SLChartFormatterProtocol.h; sourceTree = "<group>"; };
+		0BA3D87E0C6857352DDDB3EB6C93D98B /* SLLineChartData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SLLineChartData.h; sourceTree = "<group>"; };
+		1418A6D77A4D1C010821226D6139418C /* libPods-SLChartLibDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-SLChartLibDemo.a"; path = "libPods-SLChartLibDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F0561D5B3D5440F007AD4149589C5F4 /* Pods-SLChartLibDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SLChartLibDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		1F39596DDCF3138CB48717A636ABF714 /* ChartBaseLine.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ChartBaseLine.m; sourceTree = "<group>"; };
+		29F1F0B77FC5169E2B77217152D7B82A /* BaseCurveView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BaseCurveView.h; sourceTree = "<group>"; };
+		2EFB40531CB700ADF867FEEE78561E78 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		3480136CDF19F0392FE4EA2ADB680701 /* ChartDataEntry.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ChartDataEntry.m; sourceTree = "<group>"; };
+		34A13358695E9948B0B1500B9791D5B7 /* BaseCurveView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BaseCurveView.m; sourceTree = "<group>"; };
+		3C3C46E298105791F011D477F2675A36 /* ChartBaseLine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ChartBaseLine.h; sourceTree = "<group>"; };
+		3FB5497B0BA244A1EA3F197762A7F1EB /* SLCurveChartLib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SLCurveChartLib.h; path = SLCurveChartLib/SLCurveChartLib.h; sourceTree = "<group>"; };
+		47E3052D34B7CF602C962B0A2D14CDC8 /* Pods-SLChartLibDemo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SLChartLibDemo-resources.sh"; sourceTree = "<group>"; };
+		4F6147CDA0A3E10650E5D8DDAE610B6B /* SLChartBaseDataSet.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SLChartBaseDataSet.m; sourceTree = "<group>"; };
+		51204555278340A004576584EFF4759B /* SLGCDTimerTool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SLGCDTimerTool.h; sourceTree = "<group>"; };
+		533FA3D3DCCFC04BF6BCBB513A5D8207 /* SLAccelerator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SLAccelerator.m; sourceTree = "<group>"; };
+		5379D570D2FCE91B7B0F95277EBC0F81 /* Pods-SLChartLibDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SLChartLibDemo-acknowledgements.plist"; sourceTree = "<group>"; };
+		5779525879E7D4E0250FD0796CF62F02 /* ChartHighlight.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ChartHighlight.m; sourceTree = "<group>"; };
+		5DC263AB78A15098EC9E32FF733D97EB /* ChartDataEntryBase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ChartDataEntryBase.m; sourceTree = "<group>"; };
+		69ED4DD704320384561136788F30A124 /* statistics_data_bg.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = statistics_data_bg.png; path = SLCurveChartLib/Resources/statistics_data_bg.png; sourceTree = "<group>"; };
+		6D76E24485A984B4FA2F21DFB2730C77 /* SLGCDTimerTool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SLGCDTimerTool.m; sourceTree = "<group>"; };
+		6D906835DFD633B763F113C88560AA6F /* SLCurveChartLib.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = SLCurveChartLib.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		74E404AA6957590324067E330E0EC533 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		7785F2C7497E7C5992AAF2806459C454 /* UIColor+SLExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIColor+SLExtension.h"; sourceTree = "<group>"; };
+		77B63279ED2FC505098611EC7052C50D /* SLCurveChartLib-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SLCurveChartLib-dummy.m"; sourceTree = "<group>"; };
+		7D1BF4D24515866975F20924E0A19167 /* SLCurveChartLib.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = SLCurveChartLib.bundle; path = "SLCurveChartLib-SLCurveChartLib.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D8BBEAFE029E514BEF4FA377CC3AD16 /* Pods-SLChartLibDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SLChartLibDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
+		7FA847AB38266C48A0162308D0E357D9 /* SLChartBaseDataSet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SLChartBaseDataSet.h; sourceTree = "<group>"; };
+		7FB888879E060034DA65579A335C3C26 /* SLLineChartDataSet.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SLLineChartDataSet.m; sourceTree = "<group>"; };
+		85745C252314DD36353A53207F8C0814 /* ChartDataEntry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ChartDataEntry.h; sourceTree = "<group>"; };
+		8BCBD8F284533F29E179499B8AFA027F /* ChartComponentBase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ChartComponentBase.h; sourceTree = "<group>"; };
+		8C875C2B4F32947453D1AC662F589978 /* SLAccelerator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SLAccelerator.h; sourceTree = "<group>"; };
+		905579FFF504B318D1BCF5AF840CA4CB /* Pods-SLChartLibDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SLChartLibDemo.release.xcconfig"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9E4B88280A27B17F9D57B3423DC1B7D3 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		A2A92C492BE94DD7A50CE73CA35870DC /* ChartHighlight.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ChartHighlight.h; sourceTree = "<group>"; };
+		A34E23D00252E237A2441BAFEB03D5E2 /* SLChartDataProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SLChartDataProtocol.h; sourceTree = "<group>"; };
+		A6A97AD8B9F964E4582E02A2F11D3403 /* ChartAxisBase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ChartAxisBase.m; sourceTree = "<group>"; };
+		B539409BE1D4A74C8B85C802A75AE550 /* libSLCurveChartLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libSLCurveChartLib.a; path = libSLCurveChartLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C06DD5345517F3543F334D0DA2F6A154 /* ChartDataEntryBase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ChartDataEntryBase.h; sourceTree = "<group>"; };
+		D0536A302C01C9CE5B932980C024B781 /* SLCurveChartLib-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SLCurveChartLib-prefix.pch"; sourceTree = "<group>"; };
+		D068E63D2EBB077042B7E827730E4729 /* UIColor+SLExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SLExtension.m"; sourceTree = "<group>"; };
+		DA618405C58EC395EBB781ED3A8E4712 /* Pods-SLChartLibDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SLChartLibDemo-dummy.m"; sourceTree = "<group>"; };
+		DAF7339BC9A07BDF55C5FC0A046703B7 /* ResourceBundle-SLCurveChartLib-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-SLCurveChartLib-Info.plist"; sourceTree = "<group>"; };
+		E43861A9143D5EA450D1B5212B8E9D70 /* Pods-SLChartLibDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SLChartLibDemo-frameworks.sh"; sourceTree = "<group>"; };
+		E6306EA48AD1952F7742F3950C3F1B04 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		EDA42201072BA9B2A90FE3A3F082C2EE /* SLLineChartDataSet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SLLineChartDataSet.h; sourceTree = "<group>"; };
+		EE42024744FFBDFAC128797C45FE3779 /* ChartComponentBase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ChartComponentBase.m; sourceTree = "<group>"; };
+		EE6AC6E8664DC7176F94FA517D96A1A8 /* ChartAxisBase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ChartAxisBase.h; sourceTree = "<group>"; };
+		FDA7B7294E608A8B689BEAED339D38F2 /* SLChartAxisValueFormatterPotocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SLChartAxisValueFormatterPotocol.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		066C20FEE5571B911B67FDC464639751 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0695F6A32C96A7C1DAE4EF82A25DD32F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8ABB85016960EC7B13BDEC66EF79AE63 /* Foundation.framework in Frameworks */,
+				1B66813305755258C3654D78BF29BE08 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8E3FE3CA4B07794635BD102ADD96B11 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		01BB881225C152547170AF1BAB105736 /* Standard */ = {
+			isa = PBXGroup;
+			children = (
+				85745C252314DD36353A53207F8C0814 /* ChartDataEntry.h */,
+				3480136CDF19F0392FE4EA2ADB680701 /* ChartDataEntry.m */,
+				C06DD5345517F3543F334D0DA2F6A154 /* ChartDataEntryBase.h */,
+				5DC263AB78A15098EC9E32FF733D97EB /* ChartDataEntryBase.m */,
+			);
+			name = Standard;
+			path = Standard;
+			sourceTree = "<group>";
+		};
+		06CDD10DE71306278CF89108B3036DFD /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				2EFB40531CB700ADF867FEEE78561E78 /* Foundation.framework */,
+				74E404AA6957590324067E330E0EC533 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		0D727F362D3C4896E7017302D06B297C /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				7785F2C7497E7C5992AAF2806459C454 /* UIColor+SLExtension.h */,
+				D068E63D2EBB077042B7E827730E4729 /* UIColor+SLExtension.m */,
+			);
+			name = Category;
+			path = SLCurveChartLib/Category;
+			sourceTree = "<group>";
+		};
+		10AB56AE3FF46CB47D2D554F42122798 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				75703852F9330C78DEC9AD7869AF30DB /* Pods-SLChartLibDemo */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		14F21272BEB52FC615C537B49A14204B /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				E6306EA48AD1952F7742F3950C3F1B04 /* LICENSE */,
+				9E4B88280A27B17F9D57B3423DC1B7D3 /* README.md */,
+				6D906835DFD633B763F113C88560AA6F /* SLCurveChartLib.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		1581DE5F8271EE67AF4331CD676A7F7D /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				7FA847AB38266C48A0162308D0E357D9 /* SLChartBaseDataSet.h */,
+				4F6147CDA0A3E10650E5D8DDAE610B6B /* SLChartBaseDataSet.m */,
+				0BA3D87E0C6857352DDDB3EB6C93D98B /* SLLineChartData.h */,
+				02D8000A0AD6D107245BF372FEBC4430 /* SLLineChartData.m */,
+				EDA42201072BA9B2A90FE3A3F082C2EE /* SLLineChartDataSet.h */,
+				7FB888879E060034DA65579A335C3C26 /* SLLineChartDataSet.m */,
+				01BB881225C152547170AF1BAB105736 /* Standard */,
+			);
+			name = Data;
+			path = SLCurveChartLib/Data;
+			sourceTree = "<group>";
+		};
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				06CDD10DE71306278CF89108B3036DFD /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4FABF6256B3BA0D6705B3EB62D3B08F4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1418A6D77A4D1C010821226D6139418C /* libPods-SLChartLibDemo.a */,
+				B539409BE1D4A74C8B85C802A75AE550 /* libSLCurveChartLib.a */,
+				7D1BF4D24515866975F20924E0A19167 /* SLCurveChartLib.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		75703852F9330C78DEC9AD7869AF30DB /* Pods-SLChartLibDemo */ = {
+			isa = PBXGroup;
+			children = (
+				7D8BBEAFE029E514BEF4FA377CC3AD16 /* Pods-SLChartLibDemo-acknowledgements.markdown */,
+				5379D570D2FCE91B7B0F95277EBC0F81 /* Pods-SLChartLibDemo-acknowledgements.plist */,
+				DA618405C58EC395EBB781ED3A8E4712 /* Pods-SLChartLibDemo-dummy.m */,
+				E43861A9143D5EA450D1B5212B8E9D70 /* Pods-SLChartLibDemo-frameworks.sh */,
+				47E3052D34B7CF602C962B0A2D14CDC8 /* Pods-SLChartLibDemo-resources.sh */,
+				1F0561D5B3D5440F007AD4149589C5F4 /* Pods-SLChartLibDemo.debug.xcconfig */,
+				905579FFF504B318D1BCF5AF840CA4CB /* Pods-SLChartLibDemo.release.xcconfig */,
+			);
+			name = "Pods-SLChartLibDemo";
+			path = "Target Support Files/Pods-SLChartLibDemo";
+			sourceTree = "<group>";
+		};
+		7BC5A4D4B84FE32DCCA7F132E1FD91FE /* accelerator */ = {
+			isa = PBXGroup;
+			children = (
+				8C875C2B4F32947453D1AC662F589978 /* SLAccelerator.h */,
+				533FA3D3DCCFC04BF6BCBB513A5D8207 /* SLAccelerator.m */,
+			);
+			name = accelerator;
+			path = accelerator;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				CDEC77ABCD507CEA02301ADD5656BF5C /* Development Pods */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				4FABF6256B3BA0D6705B3EB62D3B08F4 /* Products */,
+				10AB56AE3FF46CB47D2D554F42122798 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		B1134D91FDEFB8BDA037B3E8337D2970 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DAF7339BC9A07BDF55C5FC0A046703B7 /* ResourceBundle-SLCurveChartLib-Info.plist */,
+				069EF17DA7453C8E915BE0B3FF743388 /* SLCurveChartLib.xcconfig */,
+				77B63279ED2FC505098611EC7052C50D /* SLCurveChartLib-dummy.m */,
+				D0536A302C01C9CE5B932980C024B781 /* SLCurveChartLib-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "SLChartLibDemo/Pods/Target Support Files/SLCurveChartLib";
+			sourceTree = "<group>";
+		};
+		BEB6FC617A518227B75C4C39953DB961 /* UtilTool */ = {
+			isa = PBXGroup;
+			children = (
+				51204555278340A004576584EFF4759B /* SLGCDTimerTool.h */,
+				6D76E24485A984B4FA2F21DFB2730C77 /* SLGCDTimerTool.m */,
+			);
+			name = UtilTool;
+			path = SLCurveChartLib/UtilTool;
+			sourceTree = "<group>";
+		};
+		C624CB435B3D376EACE687BAF57259C9 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				EE6AC6E8664DC7176F94FA517D96A1A8 /* ChartAxisBase.h */,
+				A6A97AD8B9F964E4582E02A2F11D3403 /* ChartAxisBase.m */,
+				3C3C46E298105791F011D477F2675A36 /* ChartBaseLine.h */,
+				1F39596DDCF3138CB48717A636ABF714 /* ChartBaseLine.m */,
+				8BCBD8F284533F29E179499B8AFA027F /* ChartComponentBase.h */,
+				EE42024744FFBDFAC128797C45FE3779 /* ChartComponentBase.m */,
+				A2A92C492BE94DD7A50CE73CA35870DC /* ChartHighlight.h */,
+				5779525879E7D4E0250FD0796CF62F02 /* ChartHighlight.m */,
+			);
+			name = Components;
+			path = SLCurveChartLib/Components;
+			sourceTree = "<group>";
+		};
+		C7BAB555EC1C82B2D3F357E7C605932C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				69ED4DD704320384561136788F30A124 /* statistics_data_bg.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		CDEC77ABCD507CEA02301ADD5656BF5C /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D3073865EF3EBF0212F5B3AD4A441F22 /* SLCurveChartLib */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		D3073865EF3EBF0212F5B3AD4A441F22 /* SLCurveChartLib */ = {
+			isa = PBXGroup;
+			children = (
+				3FB5497B0BA244A1EA3F197762A7F1EB /* SLCurveChartLib.h */,
+				0D727F362D3C4896E7017302D06B297C /* Category */,
+				FE8D819B1E801DCAF9283D25961F6056 /* ChartView */,
+				C624CB435B3D376EACE687BAF57259C9 /* Components */,
+				1581DE5F8271EE67AF4331CD676A7F7D /* Data */,
+				DC6BC45DA38158E2A21C74C1601667A3 /* Interface */,
+				14F21272BEB52FC615C537B49A14204B /* Pod */,
+				C7BAB555EC1C82B2D3F357E7C605932C /* Resources */,
+				B1134D91FDEFB8BDA037B3E8337D2970 /* Support Files */,
+				BEB6FC617A518227B75C4C39953DB961 /* UtilTool */,
+			);
+			name = SLCurveChartLib;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		DC6BC45DA38158E2A21C74C1601667A3 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				FDA7B7294E608A8B689BEAED339D38F2 /* SLChartAxisValueFormatterPotocol.h */,
+				A34E23D00252E237A2441BAFEB03D5E2 /* SLChartDataProtocol.h */,
+				06D690BFA9D39385E3BB3B1253EC18B2 /* SLChartFormatterProtocol.h */,
+			);
+			name = Interface;
+			path = SLCurveChartLib/Interface;
+			sourceTree = "<group>";
+		};
+		FE8D819B1E801DCAF9283D25961F6056 /* ChartView */ = {
+			isa = PBXGroup;
+			children = (
+				29F1F0B77FC5169E2B77217152D7B82A /* BaseCurveView.h */,
+				34A13358695E9948B0B1500B9791D5B7 /* BaseCurveView.m */,
+				7BC5A4D4B84FE32DCCA7F132E1FD91FE /* accelerator */,
+			);
+			name = ChartView;
+			path = SLCurveChartLib/ChartView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		01A90385EB77C943A0770FC47470C2B2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC1FB8F70D3D3CC82530ED69E5D3E892 /* BaseCurveView.h in Headers */,
+				976914BE3235E0F486562B00D9A21F32 /* ChartAxisBase.h in Headers */,
+				A8FDF2A3AB6BB51E2B5F0BE0FB72C09C /* ChartBaseLine.h in Headers */,
+				92293943C0C3AAB5A5E29BAD64BDBEDC /* ChartComponentBase.h in Headers */,
+				E7477D8DD42D2897495A22EC5B595D76 /* ChartDataEntry.h in Headers */,
+				47A7ECF1BC76F729D5277CE58D4E6B26 /* ChartDataEntryBase.h in Headers */,
+				462B4902A6577D9A22D24E8C493BB6F1 /* ChartHighlight.h in Headers */,
+				486CFB0B022B323BF74F502E93420BAC /* SLAccelerator.h in Headers */,
+				36AD4231FC4F9CC2A11FF55878CF358B /* SLChartAxisValueFormatterPotocol.h in Headers */,
+				E5DE5D3976FFB96008BF547A6573A95F /* SLChartBaseDataSet.h in Headers */,
+				B6C8FB07FD140070635BC3454AAA64A4 /* SLChartDataProtocol.h in Headers */,
+				5A292A0EEA635F37F3E3D06E1CA06DA5 /* SLChartFormatterProtocol.h in Headers */,
+				2F7484A81F7FEBEB657C303CDCB71AE3 /* SLCurveChartLib.h in Headers */,
+				D27D233CEDE413D2A5513EAE42B37D20 /* SLGCDTimerTool.h in Headers */,
+				789F2E8DB82D7F7E43708D6BDCA264BF /* SLLineChartData.h in Headers */,
+				FBED7A33DFD0C010F6495B5BE55800EF /* SLLineChartDataSet.h in Headers */,
+				73B3706F2DBE9790FC4FDABC6D15C5B9 /* UIColor+SLExtension.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		792E4874B5ACCF99AB89C666D37A964B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		4D4855213DC63A96C363FB7BFF49A9A2 /* Pods-SLChartLibDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A8414A269720E4E0B67562F28D583AB /* Build configuration list for PBXNativeTarget "Pods-SLChartLibDemo" */;
+			buildPhases = (
+				792E4874B5ACCF99AB89C666D37A964B /* Headers */,
+				8C836DAEB07A4BE0E8BE9A370357C1B1 /* Sources */,
+				066C20FEE5571B911B67FDC464639751 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6B5A74121497626007D63B3CB3833D68 /* PBXTargetDependency */,
+			);
+			name = "Pods-SLChartLibDemo";
+			productName = "Pods-SLChartLibDemo";
+			productReference = 1418A6D77A4D1C010821226D6139418C /* libPods-SLChartLibDemo.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		95F6E56178C8EDCF424515601AD899B7 /* SLCurveChartLib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2703CA43A2357430FB1A1BB4DC815D5B /* Build configuration list for PBXNativeTarget "SLCurveChartLib" */;
+			buildPhases = (
+				01A90385EB77C943A0770FC47470C2B2 /* Headers */,
+				29EA58367183F5F17D161D6D4300CE9F /* Sources */,
+				0695F6A32C96A7C1DAE4EF82A25DD32F /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				670D75E63AF01A9B013324309BC43C46 /* PBXTargetDependency */,
+			);
+			name = SLCurveChartLib;
+			productName = SLCurveChartLib;
+			productReference = B539409BE1D4A74C8B85C802A75AE550 /* libSLCurveChartLib.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		D1AF7E4344554C1A2D1133731CC11E2D /* SLCurveChartLib-SLCurveChartLib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A466A6D85D38DFCD6748326C7ED73C73 /* Build configuration list for PBXNativeTarget "SLCurveChartLib-SLCurveChartLib" */;
+			buildPhases = (
+				002F96228F33A2F29A63FEEA772F090A /* Sources */,
+				D8E3FE3CA4B07794635BD102ADD96B11 /* Frameworks */,
+				A7A5E7198B17060B9E72FE90F0856404 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SLCurveChartLib-SLCurveChartLib";
+			productName = "SLCurveChartLib-SLCurveChartLib";
+			productReference = 7D1BF4D24515866975F20924E0A19167 /* SLCurveChartLib.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 4FABF6256B3BA0D6705B3EB62D3B08F4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4D4855213DC63A96C363FB7BFF49A9A2 /* Pods-SLChartLibDemo */,
+				95F6E56178C8EDCF424515601AD899B7 /* SLCurveChartLib */,
+				D1AF7E4344554C1A2D1133731CC11E2D /* SLCurveChartLib-SLCurveChartLib */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A7A5E7198B17060B9E72FE90F0856404 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79CB923F36A747FEBC2227107F842C18 /* statistics_data_bg.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		002F96228F33A2F29A63FEEA772F090A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29EA58367183F5F17D161D6D4300CE9F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB0B695DF60E9B0A2233876781F31F7A /* BaseCurveView.m in Sources */,
+				4730BF01BFDE4B513150C805842B07E3 /* ChartAxisBase.m in Sources */,
+				8B0580C18580622C883427012105C37D /* ChartBaseLine.m in Sources */,
+				7DA844B284A3C19D5BB96C8365F4055D /* ChartComponentBase.m in Sources */,
+				745B3AC0925F0A7D4380A62B74F41DE3 /* ChartDataEntry.m in Sources */,
+				01F306FC3225DD89BD02FF8A37EEBB5C /* ChartDataEntryBase.m in Sources */,
+				C8EACFC65B05DF6980B2CE64A6366BB7 /* ChartHighlight.m in Sources */,
+				433CED992F81220D73526FDEFBFB6196 /* SLAccelerator.m in Sources */,
+				3F7A9111408F7C1E18641D8F042B6C86 /* SLChartBaseDataSet.m in Sources */,
+				7A856794FA016194F8490B2766B2610B /* SLCurveChartLib-dummy.m in Sources */,
+				69FAD21BBBFDBDDEBDB4ED41675EB385 /* SLGCDTimerTool.m in Sources */,
+				76FBB0FBF81122132CC8AED9A08FB9A3 /* SLLineChartData.m in Sources */,
+				C2E6AF0B51DD13C94FD9D81BB010468A /* SLLineChartDataSet.m in Sources */,
+				B5A1E9674446143BEE56EB3DABFFC92E /* UIColor+SLExtension.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C836DAEB07A4BE0E8BE9A370357C1B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCB78E8107797F0B11959F67906628C2 /* Pods-SLChartLibDemo-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		670D75E63AF01A9B013324309BC43C46 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SLCurveChartLib-SLCurveChartLib";
+			target = D1AF7E4344554C1A2D1133731CC11E2D /* SLCurveChartLib-SLCurveChartLib */;
+			targetProxy = DAA573D94886B633904E8E553E2A295C /* PBXContainerItemProxy */;
+		};
+		6B5A74121497626007D63B3CB3833D68 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SLCurveChartLib;
+			target = 95F6E56178C8EDCF424515601AD899B7 /* SLCurveChartLib */;
+			targetProxy = 0AA0A29B5386E7ECAC0DFCC6DC335B20 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0D6D222A1327DA5A94A1BC1E97897038 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 069EF17DA7453C8E915BE0B3FF743388 /* SLCurveChartLib.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/SLCurveChartLib";
+				INFOPLIST_FILE = "Target Support Files/SLCurveChartLib/ResourceBundle-SLCurveChartLib-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = SLCurveChartLib;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		803BAA99A358DFD8F06C565AD2278148 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 905579FFF504B318D1BCF5AF840CA4CB /* Pods-SLChartLibDemo.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		85B95B1234E227C814CCC2C7902D0916 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		94DF9B286CB21DD7B33A578363EFF286 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F0561D5B3D5440F007AD4149589C5F4 /* Pods-SLChartLibDemo.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		98DEEF4ED9A630F74F3133FEC9BBFA28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 069EF17DA7453C8E915BE0B3FF743388 /* SLCurveChartLib.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/SLCurveChartLib/SLCurveChartLib-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = SLCurveChartLib;
+				PRODUCT_NAME = SLCurveChartLib;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9C478279D6368BA18567CD3F07213007 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 069EF17DA7453C8E915BE0B3FF743388 /* SLCurveChartLib.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/SLCurveChartLib/SLCurveChartLib-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = SLCurveChartLib;
+				PRODUCT_NAME = SLCurveChartLib;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A73625DEBD810B78234FA1958C191C8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		D359D3AA41B53D6537134DFFDE67724B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 069EF17DA7453C8E915BE0B3FF743388 /* SLCurveChartLib.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/SLCurveChartLib";
+				INFOPLIST_FILE = "Target Support Files/SLCurveChartLib/ResourceBundle-SLCurveChartLib-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = SLCurveChartLib;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2703CA43A2357430FB1A1BB4DC815D5B /* Build configuration list for PBXNativeTarget "SLCurveChartLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				98DEEF4ED9A630F74F3133FEC9BBFA28 /* Debug */,
+				9C478279D6368BA18567CD3F07213007 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A73625DEBD810B78234FA1958C191C8C /* Debug */,
+				85B95B1234E227C814CCC2C7902D0916 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6A8414A269720E4E0B67562F28D583AB /* Build configuration list for PBXNativeTarget "Pods-SLChartLibDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94DF9B286CB21DD7B33A578363EFF286 /* Debug */,
+				803BAA99A358DFD8F06C565AD2278148 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A466A6D85D38DFCD6748326C7ED73C73 /* Build configuration list for PBXNativeTarget "SLCurveChartLib-SLCurveChartLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D359D3AA41B53D6537134DFFDE67724B /* Debug */,
+				0D6D222A1327DA5A94A1BC1E97897038 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

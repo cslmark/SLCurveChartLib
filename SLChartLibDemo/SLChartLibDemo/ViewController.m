@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "SLCurveChartLib.h"
+#import <SLCurveChartLib/SLCurveChartLib.h>
 #import "XAxisFormtter.h"
 #import "YAxisFormtter.h"
 #import "YRightAxisFormtter.h"
